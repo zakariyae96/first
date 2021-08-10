@@ -1,0 +1,55 @@
+
+{% block content %}
+
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="fr" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Wevops</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="css/style.css") }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+  </head>
+
+
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">LOGO</label>
+      <ul>
+        <li><a href="#">Connexion</a></li>
+		<li><a class="active" href="#">S'inscrire</a></li>
+      </ul>
+    </nav>
+    <section>
+		<!------------------ DRAG AND DROP ------------->
+		<br><br><br><br>
+
+		<label for="Fichier" class="label"><h2 style="text-align:center">Déposez votre CV</h2></label>
+		<label for=myfile></label>
+            <form action="{{ url_for('analyzefichier') }}" method="POST" enctype="multipart/form-data">
+                <div class="file-drop-area">
+                  <span class="fake-btn">Choisir un fichier</span>
+                  <input class="file-input" id=myfile type="file" multiple name=myfile>
+                    <span class="file-msg"></span>
+                </div>
+                <br>
+			        <button class="button" type="submit"><span>Valider</span></button>
+            </form>
+
+		<!------------------ DRAG AND DROP ------------->
+	</section>
+
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="{{ url_for("static", filename="js/function.js") }}"></script>
+  </body>
+
+</html>
+
+{% endblock  %}

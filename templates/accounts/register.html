@@ -1,0 +1,44 @@
+{% extends "home.html" %}
+{% block title %}Register{% endblock %}
+{% block main_content %}
+
+
+    <div class="main" style="height:100%; width:100%">
+        <div class="form-wrapper">
+            <form method="POST">
+                <h2>Register</h2><br>
+                <input class="form-control" type="text" name="name" placeholder=" Full Name" required
+                       value="{{ donnees.nomCV }}">
+                <input class="form-control" type="email" name="email" placeholder=" Email" required value="{{ donnees.mail }}">
+                <input class="form-control" type="text" name="phone" placeholder=" Phone" required
+                       value="{{ donnees.tel }}">
+                <input class="form-control" type="password" name="password" placeholder=" Password" required
+                       value="{{ password }}">
+                <input class="form-control" type="password" name="confirm" placeholder=" Password" required
+                       value="{{ password }}">
+                 <input type="checkbox" id="rgpd" name="rgpd" checked required>
+                    <label for="rgpd" style="float:right;display: block;width:95%;">J'ai lu et j'accepte les<a href="/politique" target="_blank"> Conditions Générales d'Utilisation et la Politique
+                        de Protection des Données Personnelles.</a></label><br>
+
+                <p style="float:right;display: block;width:100%; color:#D30E6D">Si vous possédez déjà un compte, <a href="/accounts/login">LOGIN</a></p>
+
+
+                <div class="actions">
+                    <button type="submit" class="bt btn-info btn-lg" style="background-color:#D30E6D; border:0px">Register</button>
+                </div>
+                <div class="error-msg">
+                    {% if error %}
+                        <div class="error-msg">{{ error }}</div>
+                    {% endif %}
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for msg in messages %}
+                                <p>{{ msg }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

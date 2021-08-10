@@ -1,0 +1,77 @@
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Wevops Application{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="css/style.css") }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <!----------------------------------new------------------>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic|Source+Code+Pro:500">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!----------------------------------new------------------>
+    {% block additional_css %}{% endblock %}
+
+  </head>
+
+
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+        <a href="{{ url_for('index') }}"><img src="{{ url_for("static", filename="img/logo.png") }}" alt="" class="logo", style="float:left"></a>
+      <ul>
+        {% if user_profile %}
+          <li><a class="active" href="/accounts/logout">Logout</a></li>
+          <li><a class="active" href="/accounts/profile" ><img src="https://img.icons8.com/windows/17/ffffff/user.png"/>
+            {% for info in user_profile %}
+                {{info.name}}
+            {% endfor %}
+            </a>
+          </li>
+        <!--<a href="/accounts/profile" style="float: right">Profile</a>-->
+        {% else %}
+          <li><a class="active" href="/accounts/login">Connexion</a></li>
+		  <li><!--<a class="active" href="/accounts/register">S'inscrire</a>--></li>
+        {% endif %}
+
+
+      </ul>
+
+    </nav>
+
+
+    <section>
+		{% block main_content %}{% endblock %}
+	</section>
+
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="{{ url_for("static", filename="js/function.js") }}"></script>
+
+    <!----------------------------------new------------------>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!----------------------------------new------------------>
+  </body>
+
+</html>
+
+{% endblock  %}

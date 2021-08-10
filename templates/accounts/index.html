@@ -1,0 +1,20 @@
+{% extends "home.html" %}
+{% block title %}Profil{% endblock %}
+{% block main_content %}
+
+<div class="main" style="height:100%; width:800px">
+    <div class="form-wrapper">
+        <form method="post">
+            <h2>Profile</h2>
+            {% for info in user_profile %}
+                <input class="form-control" type="text" name="name" placeholder=" Full Name" value="{{ info.name }}">
+                <input class="form-control" type="text" name="email" placeholder=" email" value="{{ info.email }}">
+                <input class="form-control" type="text" name="phone" placeholder=" phone" value="{{ info.phone }}">
+            {% endfor %}
+            <div class="actions">
+                <button type="submit" class="bt btn-info btn-lg" style="background-color:#D30E6D; border:0px">Sauvegarder</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

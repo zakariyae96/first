@@ -1,0 +1,42 @@
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CV Wevops</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+  </head>
+  <body>
+
+
+    <div class="block"; style="width:100%; height:100%; background-color: #FFEFFB">
+        <div>
+          <section class="hero is-bold">
+              <div class="jumbotron" style="text-align:center;background-color:white; margin-left:10%; margin-right:10%; margin-top:10%; margin-bottom:10%">
+                    <h1 class="display-5" style="color:#D30E6D;font-weight:bold" >Félicitation ! </h1>
+                  <br>
+                    <img src="https://cdn4.iconfinder.com/data/icons/music-ui-solid-24px/24/tick_success_done_valid-2-512.png" style="height:100px; width:100px" alt="">
+                    <br>
+                    <br>
+                    <br>
+                    <p class="lead">Votre curriculum vitae du nom : "<span style="font-weight:bold; color:#D30E6D">{{ nomCV }}</span>" a été bien traité</p><br>
+                    <a class="btn btn-primary btn-lg" href="{{url_for('sidebar_f')}}" style="background-color: #D30E6D; border : 1px solid #D30E6D" role="button">Voir Dashboard</a>
+              </div>
+    </div>
+          </section>
+      </div>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+{% endblock %}

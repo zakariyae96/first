@@ -1,0 +1,33 @@
+{% extends "home.html" %}
+{% block title %}Login{% endblock %}
+{% block main_content %}
+
+    <div class="main" style="height:100%; width:800px">
+        <div class="form-wrapper">
+            <form action="" method="POST">
+                <h2>Login</h2><br>
+                <input name="email" type="text" placeholder=" Your email address" class="form-control"
+                       value="{{ email }}">
+                <input name="password" type="password" placeholder=" Password" class="form-control"
+                       value="{{ password }}">
+                <div class="actions">
+                    <button type="submit" class="bt btn-info btn-lg" style="background-color:#D30E6D; border:0px">Login</button>
+                </div>
+
+                <div class="error-msg">
+                    {% if error %}
+                        <div class="error-msg">{{ error }}</div>
+                    {% endif %}
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for msg in messages %}
+                                <p>{{ msg }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </form>
+        </div>
+
+    </div>
+{% endblock %}

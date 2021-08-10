@@ -1,0 +1,43 @@
+{% extends "home.html" %}
+{% block title %}Wevops Application{% endblock %}
+
+
+
+{% block main_content %}
+
+
+<!------------------ DRAG AND DROP ------------->
+		<!--<label for="Fichier" class="label"><h2 style="text-align:center">Déposez votre CV</h2></label>-->
+        <div style="margin-top:120px;">
+		<label for=myfile></label>
+            <form action="{{ url_for('analyzefichier') }}" method="POST" enctype="multipart/form-data">
+                <div class="file-drop-area">
+                  <span class="fake-btn" style="color:#D30E6D">Glissez ou déposez un fichier</span>
+                  <input class="file-input" id=myfile type="file" multiple name=myfile>
+                    <span class="file-msg"></span>
+                </div>
+                <br>
+			    <button class="button" type="submit"><span style="color:white">Valider</span></button>
+
+                <div class="error-msg">
+                    {% if error %}
+                        <div class="error-msg">{{ error }}</div>
+                    {% endif %}
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for msg in messages %}
+                                <p>{{ msg }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </form>
+<!------------------ DRAG AND DROP ------------->
+
+
+
+        <div>
+            <h1 style="color:white">footer</h1>
+        </div>
+
+{% endblock %}

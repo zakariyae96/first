@@ -1,0 +1,4408 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://test.org/basic_onto.owl"
+         xmlns="http://test.org/basic_onto.owl#">
+
+<owl:Ontology rdf:about="http://test.org/basic_onto.owl"/>
+
+<owl:Class rdf:about="#Domain">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Competence">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Concept">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Secteur">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Poste">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="#has_domaine">
+  <rdfs:domain rdf:resource="#Competence"/>
+  <rdfs:range rdf:resource="#Domain"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_competence">
+  <rdfs:domain rdf:resource="#Domain"/>
+  <rdfs:range rdf:resource="#Competence"/>
+  <owl:inverseOf rdf:resource="#has_domaine"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#include">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  <rdfs:domain rdf:resource="#Domain"/>
+  <rdfs:range rdf:resource="#Domain"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#included">
+  <rdfs:domain rdf:resource="#Domain"/>
+  <rdfs:range rdf:resource="#Domain"/>
+  <owl:inverseOf rdf:resource="#include"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#nomC">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Competence"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#nomP">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Poste"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#nomCo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Concept"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#nomD">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Competence"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#nomS">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Secteur"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_synonyme">
+  <rdfs:domain rdf:resource="#Domain"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#similar_to">
+  <rdfs:domain rdf:resource="#Concept"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#same_as">
+  <rdfs:domain rdf:resource="#Secteur"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#also_as">
+  <rdfs:domain rdf:resource="#Poste"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<Competence rdf:about="#hdp1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hadoop</nomC>
+</Competence>
+
+<Competence rdf:about="#hve2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hive</nomC>
+</Competence>
+
+<Competence rdf:about="#cssd3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cassandra</nomC>
+</Competence>
+
+<Competence rdf:about="#dt5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dataviz</nomC>
+</Competence>
+
+<Competence rdf:about="#hdfs6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hdfs</nomC>
+</Competence>
+
+<Competence rdf:about="#mapred7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mapreduce</nomC>
+</Competence>
+
+<Competence rdf:about="#olp8">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">olap</nomC>
+</Competence>
+
+<Competence rdf:about="#jv9">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java</nomC>
+</Competence>
+
+<Competence rdf:about="#pyth10">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">python</nomC>
+</Competence>
+
+<Competence rdf:about="#scl11">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scala</nomC>
+</Competence>
+
+<Competence rdf:about="#prl2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">perl</nomC>
+</Competence>
+
+<Competence rdf:about="#sprk13">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spark</nomC>
+</Competence>
+
+<Competence rdf:about="#str14">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">storm</nomC>
+</Competence>
+
+<Competence rdf:about="#pig15">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pig</nomC>
+</Competence>
+
+<Competence rdf:about="#hbs16">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hbase</nomC>
+</Competence>
+
+<Competence rdf:about="#mngo17">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mongodb</nomC>
+</Competence>
+
+<Competence rdf:about="#reds18">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">redis</nomC>
+</Competence>
+
+<Competence rdf:about="#cldr19">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cloudera</nomC>
+</Competence>
+
+<Competence rdf:about="#cchn20">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cochon</nomC>
+</Competence>
+
+<Competence rdf:about="#flm21">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flume</nomC>
+</Competence>
+
+<Competence rdf:about="#rch22">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ruche</nomC>
+</Competence>
+
+<Competence rdf:about="#zkpr23">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">zookeeper</nomC>
+</Competence>
+
+<Competence rdf:about="#slr24">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">solr</nomC>
+</Competence>
+
+<Competence rdf:about="#kfk25">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kafka</nomC>
+</Competence>
+
+<Competence rdf:about="#tld26">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">talend</nomC>
+</Competence>
+
+<Competence rdf:about="#opnrf27">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">openrefine</nomC>
+</Competence>
+
+<Competence rdf:about="#rpdmn28">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rapidminer</nomC>
+</Competence>
+
+<Competence rdf:about="#nifi29">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nifi</nomC>
+</Competence>
+
+<Competence rdf:about="#qlkv30">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qlikview</nomC>
+</Competence>
+
+<Competence rdf:about="#dthr31">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">datahero</nomC>
+</Competence>
+
+<Competence rdf:about="#brst32">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">birst</nomC>
+</Competence>
+
+<Competence rdf:about="#domo33">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">domo</nomC>
+</Competence>
+
+<Competence rdf:about="#r34">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">langage_r</nomC>
+</Competence>
+
+<Competence rdf:about="#sas35">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sas</nomC>
+</Competence>
+
+<Competence rdf:about="#pyplot36">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pyplot</nomC>
+</Competence>
+
+<Competence rdf:about="#sciktl37">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scikitlearn</nomC>
+</Competence>
+
+<Competence rdf:about="#numpy38">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">numpy</nomC>
+</Competence>
+
+<Competence rdf:about="#scipy39">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scipy</nomC>
+</Competence>
+
+<Competence rdf:about="#pandas40">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pandas</nomC>
+</Competence>
+
+<Competence rdf:about="#stmdl41">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">statsmodels</nomC>
+</Competence>
+
+<Competence rdf:about="#mtlib42">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">matplotlib</nomC>
+</Competence>
+
+<Competence rdf:about="#sborn43">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seaborn</nomC>
+</Competence>
+
+<Competence rdf:about="#pltly44">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">plotly</nomC>
+</Competence>
+
+<Competence rdf:about="#brokh45">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bokeh</nomC>
+</Competence>
+
+<Competence rdf:about="#xgbst46">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xgboost</nomC>
+</Competence>
+
+<Competence rdf:about="#lghtgbm47">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lightgbm</nomC>
+</Competence>
+
+<Competence rdf:about="#cat48">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cat</nomC>
+</Competence>
+
+<Competence rdf:about="#eli549">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eli5</nomC>
+</Competence>
+
+<Competence rdf:about="#mht50">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mahout</nomC>
+</Competence>
+
+<Competence rdf:about="#tnsflw51">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tensorflow</nomC>
+</Competence>
+
+<Competence rdf:about="#ptrch52">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pytorch</nomC>
+</Competence>
+
+<Competence rdf:about="#dstkras54">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">keras</nomC>
+</Competence>
+
+<Competence rdf:about="#elephas55">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elephas</nomC>
+</Competence>
+
+<Competence rdf:about="#spar56">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spar</nomC>
+</Competence>
+
+<Competence rdf:about="#thano57">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">theano</nomC>
+</Competence>
+
+<Competence rdf:about="#nltk58">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nltk</nomC>
+</Competence>
+
+<Competence rdf:about="#gensim59">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gensim</nomC>
+</Competence>
+
+<Competence rdf:about="#spacy60">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spacy</nomC>
+</Competence>
+
+<Competence rdf:about="#s2s61">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seq2seq</nomC>
+</Competence>
+
+<Competence rdf:about="#w2v62">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">word2vec</nomC>
+</Competence>
+
+<Competence rdf:about="#d2v63">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doc2vec</nomC>
+</Competence>
+
+<Competence rdf:about="#scrp64">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scrapy</nomC>
+</Competence>
+
+<Competence rdf:about="#selnm65">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">selenium</nomC>
+</Competence>
+
+<Competence rdf:about="#btsp66">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">beautifulsoup</nomC>
+</Competence>
+
+<Competence rdf:about="#urlb67">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">urllib</nomC>
+</Competence>
+
+<Competence rdf:about="#phntmjs68">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phantomjs</nomC>
+</Competence>
+
+<Competence rdf:about="#pbi69">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">power bi</nomC>
+</Competence>
+
+<Competence rdf:about="#ms70">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microstrategy</nomC>
+</Competence>
+
+<Competence rdf:about="#qlik71">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qlik</nomC>
+</Competence>
+
+<Competence rdf:about="#pdt72">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pydot</nomC>
+</Competence>
+
+<Competence rdf:about="#html73">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">html</nomC>
+</Competence>
+
+<Competence rdf:about="#css74">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">css</nomC>
+</Competence>
+
+<Competence rdf:about="#jvscrpt75">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">javascript</nomC>
+</Competence>
+
+<Competence rdf:about="#jqur76">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jquery</nomC>
+</Competence>
+
+<Competence rdf:about="#bstr77">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bootstrap</nomC>
+</Competence>
+
+<Competence rdf:about="#angl78">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angularjs</nomC>
+</Competence>
+
+<Competence rdf:about="#sss79">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sass</nomC>
+</Competence>
+
+<Competence rdf:about="#ajax80">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ajax</nomC>
+</Competence>
+
+<Competence rdf:about="#less81">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">less</nomC>
+</Competence>
+
+<Competence rdf:about="#stls82">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stylus</nomC>
+</Competence>
+
+<Competence rdf:about="#git83">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">git</nomC>
+</Competence>
+
+<Competence rdf:about="#mocha84">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mocha</nomC>
+</Competence>
+
+<Competence rdf:about="#jsmn85">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jasmin</nomC>
+</Competence>
+
+<Competence rdf:about="#grnt86">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">grunt</nomC>
+</Competence>
+
+<Competence rdf:about="#glp87">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gulp</nomC>
+</Competence>
+
+<Competence rdf:about="#ang88">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angular</nomC>
+</Competence>
+
+<Competence rdf:about="#anglfr89">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angularfire</nomC>
+</Competence>
+
+<Competence rdf:about="#angcli90">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angular cli</nomC>
+</Competence>
+
+<Competence rdf:about="#atm91">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">atom</nomC>
+</Competence>
+
+<Competence rdf:about="#aurl92">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aurelia</nomC>
+</Competence>
+
+<Competence rdf:about="#bybln93">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">babylonjs</nomC>
+</Competence>
+
+<Competence rdf:about="#bckbn94">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">backbonejs</nomC>
+</Competence>
+
+<Competence rdf:about="#bem96">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bem</nomC>
+</Competence>
+
+<Competence rdf:about="#blz97">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blaze</nomC>
+</Competence>
+
+<Competence rdf:about="#bourbon98">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bourbon</nomC>
+</Competence>
+
+<Competence rdf:about="#bwr99">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bower</nomC>
+</Competence>
+
+<Competence rdf:about="#brckts100">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">brackets</nomC>
+</Competence>
+
+<Competence rdf:about="#brcll101">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">broccoli</nomC>
+</Competence>
+
+<Competence rdf:about="#brwsfr102">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">browserify</nomC>
+</Competence>
+
+<Competence rdf:about="#brnch103">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">brunch</nomC>
+</Competence>
+
+<Competence rdf:about="#cnvs104">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">canvasjs</nomC>
+</Competence>
+
+<Competence rdf:about="#chrt105">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chartjs</nomC>
+</Competence>
+
+<Competence rdf:about="#cljr106">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clojurescript</nomC>
+</Competence>
+
+<Competence rdf:about="#cmps107">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">compass</nomC>
+</Competence>
+
+<Competence rdf:about="#crjs108">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">corejs</nomC>
+</Competence>
+
+<Competence rdf:about="#d3js109">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d3js</nomC>
+</Competence>
+
+<Competence rdf:about="#dhtml10">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dhtml</nomC>
+</Competence>
+
+<Competence rdf:about="#dojo111">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dojo</nomC>
+</Competence>
+
+<Competence rdf:about="#dom112">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dom</nomC>
+</Competence>
+
+<Competence rdf:about="#dstjs113">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dustjs</nomC>
+</Competence>
+
+<Competence rdf:about="#ecm114">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ecmascript</nomC>
+</Competence>
+
+<Competence rdf:about="#elctrn115">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electron</nomC>
+</Competence>
+
+<Competence rdf:about="#embjs116">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">emberjs</nomC>
+</Competence>
+
+<Competence rdf:about="#esl117">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eslint</nomC>
+</Competence>
+
+<Competence rdf:about="#extjs118">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">extjs</nomC>
+</Competence>
+
+<Competence rdf:about="#flxbx119">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flexbox</nomC>
+</Competence>
+
+<Competence rdf:about="#gsap120">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gsap</nomC>
+</Competence>
+
+<Competence rdf:about="#haml121">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">haml</nomC>
+</Competence>
+
+<Competence rdf:about="#hndlbrs122">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">handlebarsjs</nomC>
+</Competence>
+
+<Competence rdf:about="#htmlp123">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">htmlpad</nomC>
+</Competence>
+
+<Competence rdf:about="#immtbl124">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immutablejs</nomC>
+</Competence>
+
+<Competence rdf:about="#infrjtcs125">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infragistics</nomC>
+</Competence>
+
+<Competence rdf:about="#react126">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">react</nomC>
+</Competence>
+
+<Competence rdf:about="#knkout127">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">knockoutjs</nomC>
+</Competence>
+
+<Competence rdf:about="#mrcry128">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mercuryjs</nomC>
+</Competence>
+
+<Competence rdf:about="#snch129">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sencha</nomC>
+</Competence>
+
+<Competence rdf:about="#wbrx130">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">webrx</nomC>
+</Competence>
+
+<Competence rdf:about="#vejs131">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vuejs</nomC>
+</Competence>
+
+<Competence rdf:about="#jfce132">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jface</nomC>
+</Competence>
+
+<Competence rdf:about="#jqry133">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jquery ui</nomC>
+</Competence>
+
+<Competence rdf:about="#jsx134">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jsx</nomC>
+</Competence>
+
+<Competence rdf:about="#kend135">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kendo</nomC>
+</Competence>
+
+<Competence rdf:about="#lflt136">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">leaflet</nomC>
+</Competence>
+
+<Competence rdf:about="#mrnt137">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">marionette</nomC>
+</Competence>
+
+<Competence rdf:about="#mnsry138">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">masonry</nomC>
+</Competence>
+
+<Competence rdf:about="#mercry139">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mercury</nomC>
+</Competence>
+
+<Competence rdf:about="#mbx140">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mobx</nomC>
+</Competence>
+
+<Competence rdf:about="#mdrnz141">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">modernizr</nomC>
+</Competence>
+
+<Competence rdf:about="#mstch142">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mustache</nomC>
+</Competence>
+
+<Competence rdf:about="#njks143">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nunjucks</nomC>
+</Competence>
+
+<Competence rdf:about="#nvd144">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nvd3</nomC>
+</Competence>
+
+<Competence rdf:about="#ocss145">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oocss</nomC>
+</Competence>
+
+<Competence rdf:about="#prp146">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paperjs</nomC>
+</Competence>
+
+<Competence rdf:about="#pxsjs147">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pixijs</nomC>
+</Competence>
+
+<Competence rdf:about="#plmr148">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polymer</nomC>
+</Competence>
+
+<Competence rdf:about="#pstcss149">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">postcss</nomC>
+</Competence>
+
+<Competence rdf:about="#primng150">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primeng</nomC>
+</Competence>
+
+<Competence rdf:about="#rdx151">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">redux</nomC>
+</Competence>
+
+<Competence rdf:about="#rly152">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relay</nomC>
+</Competence>
+
+<Competence rdf:about="#rqujs153">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">requirejs</nomC>
+</Competence>
+
+<Competence rdf:about="#rxjs154">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rxjs</nomC>
+</Competence>
+
+<Competence rdf:about="#sml155">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">saml</nomC>
+</Competence>
+
+<Competence rdf:about="#skltn156">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">skeleton</nomC>
+</Competence>
+
+<Competence rdf:about="#scktio157">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">socket.io</nomC>
+</Competence>
+
+<Competence rdf:about="#spnjs158">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spine js</nomC>
+</Competence>
+
+<Competence rdf:about="#undrscr159">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">underscorejs</nomC>
+</Competence>
+
+<Competence rdf:about="#cprs160">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cypress</nomC>
+</Competence>
+
+<Competence rdf:about="#pll161">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">apollo</nomC>
+</Competence>
+
+<Competence rdf:about="#tpscrpt162">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">typescript</nomC>
+</Competence>
+
+<Competence rdf:about="#php163">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">php</nomC>
+</Competence>
+
+<Competence rdf:about="#ndjs164">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nodejs</nomC>
+</Competence>
+
+<Competence rdf:about="#rstfy165">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">restifyjs</nomC>
+</Competence>
+
+<Competence rdf:about="#rby167">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ruby</nomC>
+</Competence>
+
+<Competence rdf:about="#rls168">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rails</nomC>
+</Competence>
+
+<Competence rdf:about="#rbls169">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ruby rails</nomC>
+</Competence>
+
+<Competence rdf:about="#sntr170">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sinatra</nomC>
+</Competence>
+
+<Competence rdf:about="#rda171">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">roda</nomC>
+</Competence>
+
+<Competence rdf:about="#djng172">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">django</nomC>
+</Competence>
+
+<Competence rdf:about="#flsk173">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flask</nomC>
+</Competence>
+
+<Competence rdf:about="#actn174">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">actionscript</nomC>
+</Competence>
+
+<Competence rdf:about="#cffscrpt175">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">coffeescript</nomC>
+</Competence>
+
+<Competence rdf:about="#erlng176">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">erlang</nomC>
+</Competence>
+
+<Competence rdf:about="#lrvl177">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">laravel</nomC>
+</Competence>
+
+<Competence rdf:about="#smphn178">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">symphony</nomC>
+</Competence>
+
+<Competence rdf:about="#znd179">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">zend</nomC>
+</Competence>
+
+<Competence rdf:about="#hpjs180">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hapijs</nomC>
+</Competence>
+
+<Competence rdf:about="#expsjs181">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">expressjs</nomC>
+</Competence>
+
+<Competence rdf:about="#kjs182">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Koajs</nomC>
+</Competence>
+
+<Competence rdf:about="#mtr183">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Meteorjs</nomC>
+</Competence>
+
+<Competence rdf:about="#mjto184">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mojito</nomC>
+</Competence>
+
+<Competence rdf:about="#xml185">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xml</nomC>
+</Competence>
+
+<Competence rdf:about="#xhtml186">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xhtml</nomC>
+</Competence>
+
+<Competence rdf:about="#xsl187">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsl</nomC>
+</Competence>
+
+<Competence rdf:about="#xslt188">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xslt</nomC>
+</Competence>
+
+<Competence rdf:about="#xsd189">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xsd</nomC>
+</Competence>
+
+<Competence rdf:about="#xpath190">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xpath</nomC>
+</Competence>
+
+<Competence rdf:about="#xquery191">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xquery</nomC>
+</Competence>
+
+<Competence rdf:about="#es6192">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">es6</nomC>
+</Competence>
+
+<Competence rdf:about="#rspns193">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">responsive web</nomC>
+</Competence>
+
+<Competence rdf:about="#fndt194">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foundation</nomC>
+</Competence>
+
+<Competence rdf:about="#flw195">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flow</nomC>
+</Competence>
+
+<Competence rdf:about="#mtrzcss196">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">materialize css</nomC>
+</Competence>
+
+<Competence rdf:about="#smntcui197">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">semantic ui</nomC>
+</Competence>
+
+<Competence rdf:about="#infrn198">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inferno</nomC>
+</Competence>
+
+<Competence rdf:about="#svg199">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sgv</nomC>
+</Competence>
+
+<Competence rdf:about="#dvdpcss200">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dive deep css3</nomC>
+</Competence>
+
+<Competence rdf:about="#nmpscrpts201">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">npm</nomC>
+</Competence>
+
+<Competence rdf:about="#yrn202">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">yarn</nomC>
+</Competence>
+
+<Competence rdf:about="#skw203">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">skew</nomC>
+</Competence>
+
+<Competence rdf:about="#smcss204">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">smacss</nomC>
+</Competence>
+
+<Competence rdf:about="#stmtcss205">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">systematic css</nomC>
+</Competence>
+
+<Competence rdf:about="#prct207">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">preact</nomC>
+</Competence>
+
+<Competence rdf:about="#drb208">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derby</nomC>
+</Competence>
+
+<Competence rdf:about="#sljs209">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sailsjs</nomC>
+</Competence>
+
+<Competence rdf:about="#ttl210">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">totaljs</nomC>
+</Competence>
+
+<Competence rdf:about="#phnx211">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phoenix</nomC>
+</Competence>
+
+<Competence rdf:about="#prmd212">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pyramid</nomC>
+</Competence>
+
+<Competence rdf:about="#phnxelixr213">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phoenix (elixir)</nomC>
+</Competence>
+
+<Competence rdf:about="#aur214">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aura</nomC>
+</Competence>
+
+<Competence rdf:about="#ckphp215">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cakephp</nomC>
+</Competence>
+
+<Competence rdf:about="#cdignter216">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">codeigniter</nomC>
+</Competence>
+
+<Competence rdf:about="#ftfr217">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fat free</nomC>
+</Competence>
+
+<Competence rdf:about="#phlcn218">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phalcon</nomC>
+</Competence>
+
+<Competence rdf:about="#slm219">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">slim</nomC>
+</Competence>
+
+<Competence rdf:about="#yii220">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">yii</nomC>
+</Competence>
+
+<Competence rdf:about="#wdprs221">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wordpress</nomC>
+</Competence>
+
+<Competence rdf:about="#drpl222">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">drupal</nomC>
+</Competence>
+
+<Competence rdf:about="#jmla223">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">joomla</nomC>
+</Competence>
+
+<Competence rdf:about="#expng224">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">expressionengine</nomC>
+</Competence>
+
+<Competence rdf:about="#txtptrn225">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">textpattern</nomC>
+</Competence>
+
+<Competence rdf:about="#rdnt226">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radiant</nomC>
+</Competence>
+
+<Competence rdf:about="#cshcms227">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cushy</nomC>
+</Competence>
+
+<Competence rdf:about="#slvrstrp228">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">silverstripe</nomC>
+</Competence>
+
+<Competence rdf:about="#alfrsc229">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alfresco</nomC>
+</Competence>
+
+<Competence rdf:about="#tplght230">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">typolight</nomC>
+</Competence>
+
+<Competence rdf:about="#sprnmvc231">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spring</nomC>
+</Competence>
+
+<Competence rdf:about="#strt232">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">struts 2</nomC>
+</Competence>
+
+<Competence rdf:about="#strt233">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">struts</nomC>
+</Competence>
+
+<Competence rdf:about="#hbrnt234">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hibernate</nomC>
+</Competence>
+
+<Competence rdf:about="#jsf235">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jsf</nomC>
+</Competence>
+
+<Competence rdf:about="#vdn236">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vaadin</nomC>
+</Competence>
+
+<Competence rdf:about="#grls237">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">grails</nomC>
+</Competence>
+
+<Competence rdf:about="#eclps238">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eclips</nomC>
+</Competence>
+
+<Competence rdf:about="#jsp239">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jsp</nomC>
+</Competence>
+
+<Competence rdf:about="#srvlt240">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">servlet</nomC>
+</Competence>
+
+<Competence rdf:about="#ejb241">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ejb</nomC>
+</Competence>
+
+<Competence rdf:about="#jdbc242">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jdbc</nomC>
+</Competence>
+
+<Competence rdf:about="#jndi243">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jndi</nomC>
+</Competence>
+
+<Competence rdf:about="#jta244">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jta</nomC>
+</Competence>
+
+<Competence rdf:about="#jts245">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jts</nomC>
+</Competence>
+
+<Competence rdf:about="#jca246">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jca</nomC>
+</Competence>
+
+<Competence rdf:about="#jmx247">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jmx</nomC>
+</Competence>
+
+<Competence rdf:about="#jaas248">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jaas</nomC>
+</Competence>
+
+<Competence rdf:about="#jpa249">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jpa</nomC>
+</Competence>
+
+<Competence rdf:about="#jvml250">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">javamail</nomC>
+</Competence>
+
+<Competence rdf:about="#jms251">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jms</nomC>
+</Competence>
+
+<Competence rdf:about="#rmi-iiop252">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rmi iiop</nomC>
+</Competence>
+
+<Competence rdf:about="#lwt253">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lwuit</nomC>
+</Competence>
+
+<Competence rdf:about="#twk254">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">twuik</nomC>
+</Competence>
+
+<Competence rdf:about="#rchmeng255">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rich Media Engine</nomC>
+</Competence>
+
+<Competence rdf:about="#px256">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pax</nomC>
+</Competence>
+
+<Competence rdf:about="#lush257">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lush</nomC>
+</Competence>
+
+<Competence rdf:about="#jns258">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">janus</nomC>
+</Competence>
+
+<Competence rdf:about="#tch259">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">touch</nomC>
+</Competence>
+
+<Competence rdf:about="#trnk260">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trunk</nomC>
+</Competence>
+
+<Competence rdf:about="#mrjr261">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">marjory</nomC>
+</Competence>
+
+<Competence rdf:about="#tnln262">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tinyline</nomC>
+</Competence>
+
+<Competence rdf:about="#bsmv263">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basemovil</nomC>
+</Competence>
+
+<Competence rdf:about="#kuix264">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kuix</nomC>
+</Competence>
+
+<Competence rdf:about="#kui265">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kui</nomC>
+</Competence>
+
+<Competence rdf:about="#flml266">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flemil</nomC>
+</Competence>
+
+<Competence rdf:about="#apm267">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">apime</nomC>
+</Competence>
+
+<Competence rdf:about="#tgsm268">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tagsme</nomC>
+</Competence>
+
+<Competence rdf:about="#nxtl269">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nextel</nomC>
+</Competence>
+
+<Competence rdf:about="#fre270">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fire</nomC>
+</Competence>
+
+<Competence rdf:about="#lwcl271">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lwvcl</nomC>
+</Competence>
+
+<Competence rdf:about="#j4fm272">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">j4fm</nomC>
+</Competence>
+
+<Competence rdf:about="#jmblcr273">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jmobilecore</nomC>
+</Competence>
+
+<Competence rdf:about="#mwt274">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mewt</nomC>
+</Competence>
+
+<Competence rdf:about="#swng275">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">swing me</nomC>
+</Competence>
+
+<Competence rdf:about="#thnlt276">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thinlet</nomC>
+</Competence>
+
+<Competence rdf:about="#snclst277">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">synclast ui</nomC>
+</Competence>
+
+<Competence rdf:about="#flg278">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">floggy</nomC>
+</Competence>
+
+<Competence rdf:about="#andstd279">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">android</nomC>
+</Competence>
+
+<Competence rdf:about="#mvn280">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maven</nomC>
+</Competence>
+
+<Competence rdf:about="#bld281">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blade</nomC>
+</Competence>
+
+<Competence rdf:about="#jdk282">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jdk</nomC>
+</Competence>
+
+<Competence rdf:about="#jmc283">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jmc</nomC>
+</Competence>
+
+<Competence rdf:about="#jfr284">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jfr</nomC>
+</Competence>
+
+<Competence rdf:about="#swng285">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">swing</nomC>
+</Competence>
+
+<Competence rdf:about="#swingx286">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">swingx</nomC>
+</Competence>
+
+<Competence rdf:about="#jv2d287">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java 2d</nomC>
+</Competence>
+
+<Competence rdf:about="#awt288">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">awt</nomC>
+</Competence>
+
+<Competence rdf:about="#jv3d289">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java 3d</nomC>
+</Competence>
+
+<Competence rdf:about="#jvfx290">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">javafx</nomC>
+</Competence>
+
+<Competence rdf:about="#rmi291">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rmi</nomC>
+</Competence>
+
+<Competence rdf:about="#jvdb292">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java db</nomC>
+</Competence>
+
+<Competence rdf:about="#xmljxp293">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xml jaxp</nomC>
+</Competence>
+
+<Competence rdf:about="#jni294">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jni</nomC>
+</Competence>
+
+<Competence rdf:about="#jre295">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jre</nomC>
+</Competence>
+
+<Competence rdf:about="#crb296">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">corba</nomC>
+</Competence>
+
+<Competence rdf:about="#jab297">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jab</nomC>
+</Competence>
+
+<Competence rdf:about="#jai298">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jai</nomC>
+</Competence>
+
+<Competence rdf:about="#slcfrc299">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">salesforce</nomC>
+</Competence>
+
+<Competence rdf:about="#sgcrm300">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sagecrm</nomC>
+</Competence>
+
+<Competence rdf:about="#srcrm301">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sugarcrm</nomC>
+</Competence>
+
+<Competence rdf:about="#dlbr302">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dolibarr</nomC>
+</Competence>
+
+<Competence rdf:about="#zh303">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">zoho</nomC>
+</Competence>
+
+<Competence rdf:about="#ntscr304">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">netsuite crm</nomC>
+</Competence>
+
+<Competence rdf:about="#cdb305">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">couch db</nomC>
+</Competence>
+
+<Competence rdf:about="#rvndb306">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">revendb</nomC>
+</Competence>
+
+<Competence rdf:about="#mmcdb307">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">memcachedb</nomC>
+</Competence>
+
+<Competence rdf:about="#rk308">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">riak</nomC>
+</Competence>
+
+<Competence rdf:about="#n4j309">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neo4j</nomC>
+</Competence>
+
+<Competence rdf:about="#prst310">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">perst</nomC>
+</Competence>
+
+<Competence rdf:about="#hprgrph311">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hypergraphdb</nomC>
+</Competence>
+
+<Competence rdf:about="#vldmrt312">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">voldemort</nomC>
+</Competence>
+
+<Competence rdf:about="#trstr313">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">terrastore</nomC>
+</Competence>
+
+<Competence rdf:about="#ndts314">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neodatis</nomC>
+</Competence>
+
+<Competence rdf:about="#modb315">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myoodb</nomC>
+</Competence>
+
+<Competence rdf:about="#orndb316">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">orientdb</nomC>
+</Competence>
+
+<Competence rdf:about="#infgrd317">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infogrid</nomC>
+</Competence>
+
+<Competence rdf:about="#db4o318">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">db4objects</nomC>
+</Competence>
+
+<Competence rdf:about="#orcl319">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oracle</nomC>
+</Competence>
+
+<Competence rdf:about="#orclrdbms320">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rdbms</nomC>
+</Competence>
+
+<Competence rdf:about="#db321">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">db2</nomC>
+</Competence>
+
+<Competence rdf:about="#sqlsrv322">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sql server</nomC>
+</Competence>
+
+<Competence rdf:about="#sp323">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sap</nomC>
+</Competence>
+
+<Competence rdf:about="#spsb324">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sybase</nomC>
+</Competence>
+
+<Competence rdf:about="#spsybase325">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sybase ase</nomC>
+</Competence>
+
+<Competence rdf:about="#tdt326">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">teradata</nomC>
+</Competence>
+
+<Competence rdf:about="#adbs327">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adabas</nomC>
+</Competence>
+
+<Competence rdf:about="#msql328">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mysql</nomC>
+</Competence>
+
+<Competence rdf:about="#flmkr329">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">filemaker</nomC>
+</Competence>
+
+<Competence rdf:about="#mcacc330">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microsoft access</nomC>
+</Competence>
+
+<Competence rdf:about="#infmx331">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">informix</nomC>
+</Competence>
+
+<Competence rdf:about="#sqlt332">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sqlite</nomC>
+</Competence>
+
+<Competence rdf:about="#pstgr333">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">postgresql</nomC>
+</Competence>
+
+<Competence rdf:about="#amzrds334">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amazon rds</nomC>
+</Competence>
+
+<Competence rdf:about="#sqlpr335">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequel pro</nomC>
+</Competence>
+
+<Competence rdf:about="#phpmdmn336">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phpmyadmin</nomC>
+</Competence>
+
+<Competence rdf:about="#wmpsrv337">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wampserver</nomC>
+</Competence>
+
+<Competence rdf:about="#sqsh338">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">squash</nomC>
+</Competence>
+
+<Competence rdf:about="#ttts339">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tricentis tosca testsuite</nomC>
+</Competence>
+
+<Competence rdf:about="#qtp340">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quicktest</nomC>
+</Competence>
+
+<Competence rdf:about="#ks341">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">katalon</nomC>
+</Competence>
+
+<Competence rdf:about="#wsft342">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">worksoft</nomC>
+</Competence>
+
+<Competence rdf:about="#rnrx343">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ranorex</nomC>
+</Competence>
+
+<Competence rdf:about="#prsft344">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">parasoft </nomC>
+</Competence>
+
+<Competence rdf:about="#smrtb345">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">smartbear</nomC>
+</Competence>
+
+<Competence rdf:about="#jmtr346">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jmeter</nomC>
+</Competence>
+
+<Competence rdf:about="#sop347">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">soapui</nomC>
+</Competence>
+
+<Competence rdf:about="#wbinj348">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">webinject</nomC>
+</Competence>
+
+<Competence rdf:about="#sqsh349">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">squish</nomC>
+</Competence>
+
+<Competence rdf:about="#wtr350">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">watir</nomC>
+</Competence>
+
+<Competence rdf:about="#tstm351">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testim</nomC>
+</Competence>
+
+<Competence rdf:about="#appltls352">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">applitools</nomC>
+</Competence>
+
+<Competence rdf:about="#tlrk353">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">telerik</nomC>
+</Competence>
+
+<Competence rdf:about="#tstcmp354">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testcomplete</nomC>
+</Competence>
+
+<Competence rdf:about="#wbld355">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">webload</nomC>
+</Competence>
+
+<Competence rdf:about="#ldrunr356">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">loadrunner</nomC>
+</Competence>
+
+<Competence rdf:about="#wpt357">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wapt</nomC>
+</Competence>
+
+<Competence rdf:about="#app358">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">appium</nomC>
+</Competence>
+
+<Competence rdf:about="#espr359">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">espresso</nomC>
+</Competence>
+
+<Competence rdf:about="#prft360">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">perfecto</nomC>
+</Competence>
+
+<Competence rdf:about="#exprt361">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">experitest</nomC>
+</Competence>
+
+<Competence rdf:about="#rbtm362">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">robotium</nomC>
+</Competence>
+
+<Competence rdf:about="#ldpr363">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">loadui pro</nomC>
+</Competence>
+
+<Competence rdf:about="#slkprf364">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">silk performer</nomC>
+</Competence>
+
+<Competence rdf:about="#agld365">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">agileload</nomC>
+</Competence>
+
+<Competence rdf:about="#brs366">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">browsera</nomC>
+</Competence>
+
+<Competence rdf:about="#crss367">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crossbrowser</nomC>
+</Competence>
+
+<Competence rdf:about="#sclbs368">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">saucelabs</nomC>
+</Competence>
+
+<Competence rdf:about="#gstlb369">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ghostlab</nomC>
+</Competence>
+
+<Competence rdf:about="#brws370">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">browsershots</nomC>
+</Competence>
+
+<Competence rdf:about="#ntsprk371">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">netsparker</nomC>
+</Competence>
+
+<Competence rdf:about="#owsp372">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">owasp</nomC>
+</Competence>
+
+<Competence rdf:about="#antx373">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acunetix</nomC>
+</Competence>
+
+<Competence rdf:about="#wcs374">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">w3c css validator</nomC>
+</Competence>
+
+<Competence rdf:about="#spsnr375">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">saopsonar</nomC>
+</Competence>
+
+<Competence rdf:about="#jr376">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jira</nomC>
+</Competence>
+
+<Competence rdf:about="#mntsh377">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mantishub</nomC>
+</Competence>
+
+<Competence rdf:about="#fgbz378">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> fogbugz</nomC>
+</Competence>
+
+<Competence rdf:about="#bgzll379">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bugzilla</nomC>
+</Competence>
+
+<Competence rdf:about="#bgnt380">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bugnet</nomC>
+</Competence>
+
+<Competence rdf:about="#bggn381">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bug genie</nomC>
+</Competence>
+
+<Competence rdf:about="#rdmn382">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">redmine</nomC>
+</Competence>
+
+<Competence rdf:about="#qtest383">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qtest</nomC>
+</Competence>
+
+<Competence rdf:about="#tstpd384">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testpad</nomC>
+</Competence>
+
+<Competence rdf:about="#prct385">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">practitest</nomC>
+</Competence>
+
+<Competence rdf:about="#zphr386">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">zephyr</nomC>
+</Competence>
+
+<Competence rdf:about="#qmtr387">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qmetry</nomC>
+</Competence>
+
+<Competence rdf:about="#tstrl388">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testrail</nomC>
+</Competence>
+
+<Competence rdf:about="#tclb389">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">test collab</nomC>
+</Competence>
+
+<Competence rdf:about="#qac390">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qacomplete</nomC>
+</Competence>
+
+<Competence rdf:about="#tlnk391">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testlink</nomC>
+</Competence>
+
+<Competence rdf:about="#reactjs392">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reactjs</nomC>
+</Competence>
+
+<Competence rdf:about="#html5393">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">html5</nomC>
+</Competence>
+
+<Competence rdf:about="#css3394">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">css3</nomC>
+</Competence>
+
+<Competence rdf:about="#dtnet395">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dotnet</nomC>
+</Competence>
+
+<Competence rdf:about="#dtntstd396">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dotnet standard</nomC>
+</Competence>
+
+<Competence rdf:about="#aspdotnet397">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aspdotnet</nomC>
+</Competence>
+
+<Competence rdf:about="#dtntfr398">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dotnet framework</nomC>
+</Competence>
+
+<Competence rdf:about="#mn399">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mono</nomC>
+</Competence>
+
+<Competence rdf:about="#xmrn400">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xamarin</nomC>
+</Competence>
+
+<Competence rdf:about="#uwp401">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uwp</nomC>
+</Competence>
+
+<Competence rdf:about="#cshrp402">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">csharp</nomC>
+</Competence>
+
+<Competence rdf:about="#vbnt403">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vbdotnet</nomC>
+</Competence>
+
+<Competence rdf:about="#clr404">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clr</nomC>
+</Competence>
+
+<Competence rdf:about="#clrc405">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">coreclr</nomC>
+</Competence>
+
+<Competence rdf:about="#vstd406">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">visual studio</nomC>
+</Competence>
+
+<Competence rdf:about="#ck407">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cake</nomC>
+</Competence>
+
+<Competence rdf:about="#fk408">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fake</nomC>
+</Competence>
+
+<Competence rdf:about="#vb409">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vb</nomC>
+</Competence>
+
+<Competence rdf:about="#cpls410">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cplus</nomC>
+</Competence>
+
+<Competence rdf:about="#jnks411">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jenkins</nomC>
+</Competence>
+
+<Competence rdf:about="#vrsone412">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">versionone</nomC>
+</Competence>
+
+<Competence rdf:about="#scrm413">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scrum</nomC>
+</Competence>
+
+<Competence rdf:about="#eclps414">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eclipse</nomC>
+</Competence>
+
+<Competence rdf:about="#ntbns415">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">netbeans</nomC>
+</Competence>
+
+<Competence rdf:about="#jsmn416">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jasmine</nomC>
+</Competence>
+
+<Competence rdf:about="#krm417">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">karma</nomC>
+</Competence>
+
+<Competence rdf:about="#jnt418">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">junit</nomC>
+</Competence>
+
+<Competence rdf:about="#tstng419">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testng</nomC>
+</Competence>
+
+<Competence rdf:about="#svn420">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">svn</nomC>
+</Competence>
+
+<Competence rdf:about="#tmct421">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tomcat</nomC>
+</Competence>
+
+<Competence rdf:about="#glsf422">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">glassfish</nomC>
+</Competence>
+
+<Competence rdf:about="#jbss423">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jboss</nomC>
+</Competence>
+
+<Competence rdf:about="#dtlk424">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">datalake</nomC>
+</Competence>
+
+<Competence rdf:about="#hvql425">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hiveql</nomC>
+</Competence>
+
+<Competence rdf:about="#sqp426">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sqoop</nomC>
+</Competence>
+
+<Competence rdf:about="#blne427">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">beeline</nomC>
+</Competence>
+
+<Competence rdf:about="#impl428">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">impala</nomC>
+</Competence>
+
+<Competence rdf:about="#pysprk429">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pyspark</nomC>
+</Competence>
+
+<Competence rdf:about="#argprs430">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">argparse</nomC>
+</Competence>
+
+<Competence rdf:about="#hvcntxt431">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hivecontext</nomC>
+</Competence>
+
+<Competence rdf:about="#snr432">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sonar</nomC>
+</Competence>
+
+<Competence rdf:about="#trll433">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trello</nomC>
+</Competence>
+
+<Competence rdf:about="#btrx434">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bitrix</nomC>
+</Competence>
+
+<Competence rdf:about="#cnfls435">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">confluence</nomC>
+</Competence>
+
+<Competence rdf:about="#slck436">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">slack</nomC>
+</Competence>
+
+<Competence rdf:about="#atms437">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">atemis</nomC>
+</Competence>
+
+<Competence rdf:about="#aznd438">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">azendoo</nomC>
+</Competence>
+
+<Competence rdf:about="#bscmp439">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basecamp</nomC>
+</Competence>
+
+<Competence rdf:about="#clrzn440">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clarizen</nomC>
+</Competence>
+
+<Competence rdf:about="#clbtv441">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">collabtive</nomC>
+</Competence>
+
+<Competence rdf:about="#egrwp442">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">egroupware</nomC>
+</Competence>
+
+<Competence rdf:about="#extonln443">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exact online</nomC>
+</Competence>
+
+<Competence rdf:about="#expltfr444">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exo platform</nomC>
+</Competence>
+
+<Competence rdf:about="#eylbrd445">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eylean board</nomC>
+</Competence>
+
+<Competence rdf:about="#gntprj446">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ganttproject</nomC>
+</Competence>
+
+<Competence rdf:about="#gnsprj447">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">genius project</nomC>
+</Competence>
+
+<Competence rdf:about="#gt448">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gouti</nomC>
+</Competence>
+
+<Competence rdf:about="#kiwli449">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kiwili</nomC>
+</Competence>
+
+<Competence rdf:about="#kplt450">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kplato</nomC>
+</Competence>
+
+<Competence rdf:about="#lnchpd451">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">launchpad</nomC>
+</Competence>
+
+<Competence rdf:about="#mnts452">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mantisbt</nomC>
+</Competence>
+
+<Competence rdf:about="#mprj453">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microsoft project</nomC>
+</Competence>
+
+<Competence rdf:about="#mywrk454">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myworkplan</nomC>
+</Competence>
+
+<Competence rdf:about="#ospc455">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">o3spaces</nomC>
+</Competence>
+
+<Competence rdf:about="#onloffc456">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">onlyoffice</nomC>
+</Competence>
+
+<Competence rdf:about="#opnwork457">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">open workbench</nomC>
+</Competence>
+
+<Competence rdf:about="#opnrj458">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">openproj</nomC>
+</Competence>
+
+<Competence rdf:about="#phpgrpware459">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phpgroupware</nomC>
+</Competence>
+
+<Competence rdf:about="#ppp460">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primavera project planner</nomC>
+</Competence>
+
+<Competence rdf:about="#prjld461">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">projelead</nomC>
+</Competence>
+
+<Competence rdf:about="#scfrm462">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sciforma</nomC>
+</Competence>
+
+<Competence rdf:about="#tskjugglr463">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taskjuggler</nomC>
+</Competence>
+
+<Competence rdf:about="#trc464">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trac</nomC>
+</Competence>
+
+<Competence rdf:about="#tlp465">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tuleap</nomC>
+</Competence>
+
+<Competence rdf:about="#wm466">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wimi</nomC>
+</Competence>
+
+<Competence rdf:about="#wt467">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wit</nomC>
+</Competence>
+
+<Competence rdf:about="#wrkentr468">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">workplan enterprise</nomC>
+</Competence>
+
+<Competence rdf:about="#wrk469">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wrike</nomC>
+</Competence>
+
+<Competence rdf:about="#splnn470">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">soplanning</nomC>
+</Competence>
+
+<Competence rdf:about="#vslpln471">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">visual planning</nomC>
+</Competence>
+
+<Competence rdf:about="#vslp472">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">visualprojet</nomC>
+</Competence>
+
+<Competence rdf:about="#wndws473">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">windows</nomC>
+</Competence>
+
+<Competence rdf:about="#unx474">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unix</nomC>
+</Competence>
+
+<Competence rdf:about="#lnx475">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">linux</nomC>
+</Competence>
+
+<Competence rdf:about="#mcos476">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">macos</nomC>
+</Competence>
+
+<Competence rdf:about="#ios477">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ios</nomC>
+</Competence>
+
+<Competence rdf:about="#gnulnx478">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gnu/linux</nomC>
+</Competence>
+
+<Competence rdf:about="#dbn479">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">debian</nomC>
+</Competence>
+
+<Competence rdf:about="#gnt480">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gentoo</nomC>
+</Competence>
+
+<Competence rdf:about="#rdht481">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">red hat</nomC>
+</Competence>
+
+<Competence rdf:about="#sse482">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">suse</nomC>
+</Competence>
+
+<Competence rdf:about="#slckwr483">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">slackware</nomC>
+</Competence>
+
+<Competence rdf:about="#bsd484">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bsd</nomC>
+</Competence>
+
+<Competence rdf:about="#ntbs485">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">netbsd</nomC>
+</Competence>
+
+<Competence rdf:about="#pnbsd486">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">openbsd</nomC>
+</Competence>
+
+<Competence rdf:about="#frbsd487">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">freebsd</nomC>
+</Competence>
+
+<Competence rdf:about="#pcbsd488">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">picobsd</nomC>
+</Competence>
+
+<Competence rdf:about="#drgnfly489">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dragonfly bsd</nomC>
+</Competence>
+
+<Competence rdf:about="#drwn490">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">darwin</nomC>
+</Competence>
+
+<Competence rdf:about="#aix491">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aix</nomC>
+</Competence>
+
+<Competence rdf:about="#opnslrs492">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opensolaris</nomC>
+</Competence>
+
+<Competence rdf:about="#slrs493">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">solaris</nomC>
+</Competence>
+
+<Competence rdf:about="#aux494">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a/ux</nomC>
+</Competence>
+
+<Competence rdf:about="#bll495">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bull</nomC>
+</Competence>
+
+<Competence rdf:about="#bos496">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bos</nomC>
+</Competence>
+
+<Competence rdf:about="#irx497">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irix</nomC>
+</Competence>
+
+<Competence rdf:about="#hpux498">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hp-ux</nomC>
+</Competence>
+
+<Competence rdf:about="#lynx499">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lynxos</nomC>
+</Competence>
+
+<Competence rdf:about="#nxtp500">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nextstep</nomC>
+</Competence>
+
+<Competence rdf:about="#snx501">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sinix</nomC>
+</Competence>
+
+<Competence rdf:about="#sun502">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sunos</nomC>
+</Competence>
+
+<Competence rdf:about="#tru503">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tru64</nomC>
+</Competence>
+
+<Competence rdf:about="#os2504">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">os/2</nomC>
+</Competence>
+
+<Competence rdf:about="#os505">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">os/400</nomC>
+</Competence>
+
+<Competence rdf:about="#vms506">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vms</nomC>
+</Competence>
+
+<Competence rdf:about="#opnvms507">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">openvms</nomC>
+</Competence>
+
+<Competence rdf:about="#multcs508">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multics </nomC>
+</Competence>
+
+<Competence rdf:about="#ctss509">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ctss</nomC>
+</Competence>
+
+<Competence rdf:about="#gcos510">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gcos</nomC>
+</Competence>
+
+<Competence rdf:about="#bs511">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bs2000</nomC>
+</Competence>
+
+<Competence rdf:about="#ppnos512">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pipinos</nomC>
+</Competence>
+
+<Competence rdf:about="#alnx513">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alinux</nomC>
+</Competence>
+
+<Competence rdf:about="#cnt514">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">centos</nomC>
+</Competence>
+
+<Competence rdf:about="#kl515">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kali linux</nomC>
+</Competence>
+
+<Competence rdf:about="#fdr516">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fedora</nomC>
+</Competence>
+
+<Competence rdf:about="#ubnt517">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ubuntu</nomC>
+</Competence>
+
+<Competence rdf:about="#sh518">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shell</nomC>
+</Competence>
+
+<Competence rdf:about="#btch519">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">batch</nomC>
+</Competence>
+
+<Competence rdf:about="#rspbn520">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">raspbian</nomC>
+</Competence>
+
+<Competence rdf:about="#mgia521">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mageia</nomC>
+</Competence>
+
+<Competence rdf:about="#etl522">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">etl</nomC>
+</Competence>
+
+<Competence rdf:about="#mcrsbi523">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microsoft bi</nomC>
+</Competence>
+
+<Competence rdf:about="#cogns524">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cognos</nomC>
+</Competence>
+
+<Competence rdf:about="#odi525">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">odi</nomC>
+</Competence>
+
+<Competence rdf:about="#infrmtc526">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">informatica</nomC>
+</Competence>
+
+<Competence rdf:about="#spbi527">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sap bi</nomC>
+</Competence>
+
+<Competence rdf:about="#spbw528">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sap bw</nomC>
+</Competence>
+
+<Competence rdf:about="#hn529">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hana</nomC>
+</Competence>
+
+<Competence rdf:about="#dtstg530">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">datastage</nomC>
+</Competence>
+
+<Competence rdf:about="#ntzz531">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">netezza</nomC>
+</Competence>
+
+<Competence rdf:about="#mdx532">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mdx</nomC>
+</Competence>
+
+<Competence rdf:about="#eis533">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eis</nomC>
+</Competence>
+
+<Competence rdf:about="#bsc534">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">balanced scorecard</nomC>
+</Competence>
+
+<Competence rdf:about="#sql535">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sql</nomC>
+</Competence>
+
+<Competence rdf:about="#bo536">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">business object</nomC>
+</Competence>
+
+<Competence rdf:about="#bds537">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bods</nomC>
+</Competence>
+
+<Competence rdf:about="#jded538">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jd edwards</nomC>
+</Competence>
+
+<Competence rdf:about="#ss539">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">saas</nomC>
+</Competence>
+
+<Competence rdf:about="#msb540">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">msbi</nomC>
+</Competence>
+
+<Competence rdf:about="#sss541">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ssas</nomC>
+</Competence>
+
+<Competence rdf:about="#ssis542">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ssis</nomC>
+</Competence>
+
+<Competence rdf:about="#ssrs543">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ssrs</nomC>
+</Competence>
+
+<Competence rdf:about="#mcrst544">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microstrategy</nomC>
+</Competence>
+
+<Competence rdf:about="#bo545">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bo</nomC>
+</Competence>
+
+<Competence rdf:about="#plsql546">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pl sql</nomC>
+</Competence>
+
+<Competence rdf:about="#sns547">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sense</nomC>
+</Competence>
+
+<Competence rdf:about="#tm1548">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tm1</nomC>
+</Competence>
+
+<Competence rdf:about="#tgtk549">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tagetik</nomC>
+</Competence>
+
+<Competence rdf:about="#550">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sap bpc</nomC>
+</Competence>
+
+<Competence rdf:about="#tbsftwr551">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tableau software</nomC>
+</Competence>
+
+<Competence rdf:about="#jspr552">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jasper</nomC>
+</Competence>
+
+<Competence rdf:about="#qlksns553">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qliksense</nomC>
+</Competence>
+
+<Competence rdf:about="#mrprt554">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myreport</nomC>
+</Competence>
+
+<Competence rdf:about="#rprtone555">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">report one</nomC>
+</Competence>
+
+<Competence rdf:about="#mcrftnav556">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microsoft nav</nomC>
+</Competence>
+
+<Competence rdf:about="#mcrftax557">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microsoft ax</nomC>
+</Competence>
+
+<Competence rdf:about="#genio558">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">genio</nomC>
+</Competence>
+
+<Competence rdf:about="#azr559">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">azure</nomC>
+</Competence>
+
+<Competence rdf:about="#lmr560">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lumira</nomC>
+</Competence>
+
+<Competence rdf:about="#wb561">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">webi</nomC>
+</Competence>
+
+<Competence rdf:about="#spnlss562">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sap analysis</nomC>
+</Competence>
+
+<Competence rdf:about="#td563">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">toad</nomC>
+</Competence>
+
+<Competence rdf:about="#sqlsrv564">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sqlserver</nomC>
+</Competence>
+
+<Competence rdf:about="#prnc565">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prince2</nomC>
+</Competence>
+
+<Competence rdf:about="#pmi566">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pmi</nomC>
+</Competence>
+
+<Competence rdf:about="#sptfr567">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spotfire</nomC>
+</Competence>
+
+<Competence rdf:about="#tsql568">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">t sql</nomC>
+</Competence>
+
+<Competence rdf:about="#sqldev569">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sql developper</nomC>
+</Competence>
+
+<Competence rdf:about="#prscp570">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">periscope</nomC>
+</Competence>
+
+<Competence rdf:about="#nprintn571">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nprinting</nomC>
+</Competence>
+
+<Competence rdf:about="#hprn572">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hyperion</nomC>
+</Competence>
+
+<Competence rdf:about="#crstlrpt573">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crystal report</nomC>
+</Competence>
+
+<Competence rdf:about="#dx574">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dax</nomC>
+</Competence>
+
+<Competence rdf:about="#vrtc575">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vertica</nomC>
+</Competence>
+
+<Competence rdf:about="#tbc576">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tibco</nomC>
+</Competence>
+
+<Competence rdf:about="#pwrpvt577">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">powerpivot</nomC>
+</Competence>
+
+<Competence rdf:about="#latrx578">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alteryx</nomC>
+</Competence>
+
+<Competence rdf:about="#rst579">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rest</nomC>
+</Competence>
+
+<Competence rdf:about="#sop580">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">soap</nomC>
+</Competence>
+
+<Competence rdf:about="#ob581">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obiee581</nomC>
+</Competence>
+
+<Competence rdf:about="#cmc582">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cmc</nomC>
+</Competence>
+
+<Competence rdf:about="#ecc583">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ecc</nomC>
+</Competence>
+
+<Competence rdf:about="#rdshft584">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">redshift</nomC>
+</Competence>
+
+<Competence rdf:about="#grv585">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">groovy</nomC>
+</Competence>
+
+<Competence rdf:about="#kbrntrs586">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kubernetes</nomC>
+</Competence>
+
+<Competence rdf:about="#dckr587">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">docker</nomC>
+</Competence>
+
+<Competence rdf:about="#dx588">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dex</nomC>
+</Competence>
+
+<Competence rdf:about="#dl589">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dal</nomC>
+</Competence>
+
+<Competence rdf:about="#cb590">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cobol</nomC>
+</Competence>
+
+<Competence rdf:about="#mvc591">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mvc</nomC>
+</Competence>
+
+<Competence rdf:about="#ccs592">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cics</nomC>
+</Competence>
+
+<Competence rdf:about="#ntwrk593">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nortonworks</nomC>
+</Competence>
+
+<Competence rdf:about="#oozie594">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elasticsearch</nomC>
+</Competence>
+
+<Competence rdf:about="#wk595">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">waiku</nomC>
+</Competence>
+
+<Competence rdf:about="#h596">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hue</nomC>
+</Competence>
+
+<Competence rdf:about="#lgstch597">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">logstach</nomC>
+</Competence>
+
+<Competence rdf:about="#kbn598">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kibana</nomC>
+</Competence>
+
+<Competence rdf:about="#grfn599">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">grafana</nomC>
+</Competence>
+
+<Competence rdf:about="#chbs600">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">couchbase</nomC>
+</Competence>
+
+<Competence rdf:about="#akka601">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">akka</nomC>
+</Competence>
+
+<Competence rdf:about="#msm602">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mesos</nomC>
+</Competence>
+
+<Competence rdf:about="#rckdb603">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rockdb</nomC>
+</Competence>
+
+<Competence rdf:about="#nsbl604">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ansible</nomC>
+</Competence>
+
+<Competence rdf:about="#ambr605">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ambari</nomC>
+</Competence>
+
+<Competence rdf:about="#rngr606">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ranger</nomC>
+</Competence>
+
+<Competence rdf:about="#mpr607">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mapr</nomC>
+</Competence>
+
+<Competence rdf:about="#avr608">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">avro</nomC>
+</Competence>
+
+<Competence rdf:about="#prqut609">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">parquet</nomC>
+</Competence>
+
+<Competence rdf:about="#orc610">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">orc</nomC>
+</Competence>
+
+<Competence rdf:about="#hdp611">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hdp</nomC>
+</Competence>
+
+<Competence rdf:about="#hdf612">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hdf</nomC>
+</Competence>
+
+<Competence rdf:about="#knx613">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">knox</nomC>
+</Competence>
+
+<Competence rdf:about="#flnk614">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flink</nomC>
+</Competence>
+
+<Competence rdf:about="#ym615">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">yam</nomC>
+</Competence>
+
+<Competence rdf:about="#hnk616">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hunk</nomC>
+</Competence>
+
+<Competence rdf:about="#mtlb617">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">matlab</nomC>
+</Competence>
+
+<Competence rdf:about="#soa618">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">soa</nomC>
+</Competence>
+
+<Competence rdf:about="#aws619">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aws</nomC>
+</Competence>
+
+<Competence rdf:about="#agl620">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">agile</nomC>
+</Competence>
+
+<Competence rdf:about="#esb621">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">esb</nomC>
+</Competence>
+
+<Competence rdf:about="#mdm622">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mdm</nomC>
+</Competence>
+
+<Competence rdf:about="#ps623">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paas</nomC>
+</Competence>
+
+<Competence rdf:about="#is624">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">iaas</nomC>
+</Competence>
+
+<Competence rdf:about="#oltp625">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oltp</nomC>
+</Competence>
+
+<Competence rdf:about="#dmp626">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dmp</nomC>
+</Competence>
+
+<Competence rdf:about="#pnth627">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pentaho</nomC>
+</Competence>
+
+<Competence rdf:about="#ws2628">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wso2</nomC>
+</Competence>
+
+<Competence rdf:about="#jsprsft629">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jaspersoft</nomC>
+</Competence>
+
+<Competence rdf:about="#jdx630">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jedox</nomC>
+</Competence>
+
+<Competence rdf:about="#spg631">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spago</nomC>
+</Competence>
+
+<Competence rdf:about="#jhpstr632">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomC rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jhipster</nomC>
+</Competence>
+
+<Secteur rdf:about="#ag0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">agroalimentaire</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">agricole</same_as>
+</Secteur>
+
+<Secteur rdf:about="#ba1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">banque</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">banquaire</same_as>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">finance</same_as>
+</Secteur>
+
+<Secteur rdf:about="#as2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">assurance</nomS>
+</Secteur>
+
+<Secteur rdf:about="#bo3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bois</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">papier</same_as>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carton</same_as>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">imprimerie</same_as>
+</Secteur>
+
+<Secteur rdf:about="#co4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">construction</nomS>
+</Secteur>
+
+<Secteur rdf:about="#ch5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chimie</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">parachimie</same_as>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">industrie chimique</same_as>
+</Secteur>
+
+<Secteur rdf:about="#co6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">commerce</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">négoce</same_as>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distribution</same_as>
+</Secteur>
+
+<Secteur rdf:about="#mu7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multimédia</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">média</same_as>
+</Secteur>
+
+<Secteur rdf:about="#él8">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">électronique</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">électricité</same_as>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">energie</same_as>
+</Secteur>
+
+<Secteur rdf:about="#ét9">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">études conseils</nomS>
+</Secteur>
+
+<Secteur rdf:about="#in10">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">industrie pharmaceutique</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pharmacie</same_as>
+</Secteur>
+
+<Secteur rdf:about="#in11">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">informatique</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">télécoms</same_as>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">it</same_as>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">technologie information</same_as>
+</Secteur>
+
+<Secteur rdf:about="#ma12">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">machine équipement</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">automobile</same_as>
+</Secteur>
+
+<Secteur rdf:about="#mé13">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">métallurgie</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">travail métal</same_as>
+</Secteur>
+
+<Secteur rdf:about="#pl14">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">plastique</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">caoutchouc</same_as>
+</Secteur>
+
+<Secteur rdf:about="#se15">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">service entreprise</nomS>
+</Secteur>
+
+<Secteur rdf:about="#te16">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">textile</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">habillement</same_as>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chaussure</same_as>
+</Secteur>
+
+<Secteur rdf:about="#tr17">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transport</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">logistique</same_as>
+</Secteur>
+
+<Secteur rdf:about="#to18">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tourisme</nomS>
+</Secteur>
+
+<Secteur rdf:about="#me19">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomS rdf:datatype="http://www.w3.org/2001/XMLSchema#string">medecine</nomS>
+  <same_as rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biologie</same_as>
+</Secteur>
+
+<Concept rdf:about="#bu0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">business</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">métier</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">job</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">travail</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">travaux</similar_to>
+</Concept>
+
+<Concept rdf:about="#st1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stratégie</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tactique</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">méthode</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">technique</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stratagème</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">méthodologie</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">procedure</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">démarche</similar_to>
+</Concept>
+
+<Concept rdf:about="#en2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">entreprise</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organisation</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">établissement</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">société</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">boite</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">company</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">campagne</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">agence</similar_to>
+</Concept>
+
+<Concept rdf:about="#éq3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">équipe</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">groupe travail</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">équipage</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">travail collectif</similar_to>
+</Concept>
+
+<Concept rdf:about="#be4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">besoin</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exigence</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nécessité</similar_to>
+</Concept>
+
+<Concept rdf:about="#pr5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">processus</similar_to>
+</Concept>
+
+<Concept rdf:about="#da6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">donnée</similar_to>
+</Concept>
+
+<Concept rdf:about="#cl7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">client</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clientèle</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">achetant</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">demandeur</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">consommateur</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">preneur</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prospect</similar_to>
+</Concept>
+
+<Concept rdf:about="#ch8">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chiffre vente</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">volume vente</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chiffre affaire</similar_to>
+</Concept>
+
+<Concept rdf:about="#hi9">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">historique</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">journal</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">log</similar_to>
+</Concept>
+
+<Concept rdf:about="#éq10">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">équipe technique</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">équipe informatique</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">équipe it</similar_to>
+</Concept>
+
+<Concept rdf:about="#it11">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">it</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">informatique</similar_to>
+</Concept>
+
+<Concept rdf:about="#si12">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">si</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">système information</similar_to>
+</Concept>
+
+<Concept rdf:about="#ia13">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ia</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intelligence artificielle</similar_to>
+</Concept>
+
+<Concept rdf:about="#do14">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">donnée personnelle</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">confidentialité</similar_to>
+</Concept>
+
+<Concept rdf:about="#vo15">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">volume donnée</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">masse donnée</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">donnée massive</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">donnée volumineuse</similar_to>
+</Concept>
+
+<Concept rdf:about="#ap16">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">application</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">logiciel</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">produit informatique</similar_to>
+</Concept>
+
+<Concept rdf:about="#re17">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reporting</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">report</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">compte rendu</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tableau bord</similar_to>
+</Concept>
+
+<Concept rdf:about="#im18">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">impact</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">effet</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">influence</similar_to>
+</Concept>
+
+<Concept rdf:about="#da19">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data engineering</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ingénieurie donnée</similar_to>
+</Concept>
+
+<Concept rdf:about="#th20">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thématique</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thème</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sujet</similar_to>
+</Concept>
+
+<Concept rdf:about="#do21">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">domaine activité</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">secteur activité</similar_to>
+</Concept>
+
+<Concept rdf:about="#te22">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temps réel</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">real time</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">streaming</similar_to>
+</Concept>
+
+<Concept rdf:about="#co23">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">connaissance</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">compétence</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">savoir faire</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">capacité</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aptitude</similar_to>
+</Concept>
+
+<Concept rdf:about="#di24">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">digitale</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">numérique</similar_to>
+</Concept>
+
+<Concept rdf:about="#e 25">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e commerce</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">commerce en ligne</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">site marchand</similar_to>
+</Concept>
+
+<Concept rdf:about="#pl26">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">plan</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">planing</similar_to>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">planification</similar_to>
+</Concept>
+
+<Concept rdf:about="#tm27">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tme</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maintenance exploitation</similar_to>
+</Concept>
+
+<Concept rdf:about="#tm28">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <nomCo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tma</nomCo>
+  <similar_to rdf:datatype="http://www.w3.org/2001/XMLSchema#string">maintenace applicative</similar_to>
+</Concept>
+
+<Domain rdf:about="#scrpg">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#scrp64"/>
+  <has_competence rdf:resource="#selnm65"/>
+  <has_competence rdf:resource="#btsp66"/>
+  <has_competence rdf:resource="#urlb67"/>
+  <has_competence rdf:resource="#phntmjs68"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scraping</nomD>
+</Domain>
+
+<Domain rdf:about="#mlearng">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#sciktl37"/>
+  <has_competence rdf:resource="#xgbst46"/>
+  <has_competence rdf:resource="#lghtgbm47"/>
+  <has_competence rdf:resource="#cat48"/>
+  <has_competence rdf:resource="#eli549"/>
+  <has_competence rdf:resource="#mht50"/>
+  <include rdf:resource="#dlearng"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">machine learning</nomD>
+</Domain>
+
+<Domain rdf:about="#dlearng">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#tnsflw51"/>
+  <has_competence rdf:resource="#ptrch52"/>
+  <has_competence rdf:resource="#dstkras54"/>
+  <has_competence rdf:resource="#elephas55"/>
+  <has_competence rdf:resource="#spar56"/>
+  <has_competence rdf:resource="#thano57"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deep learning</nomD>
+</Domain>
+
+<Domain rdf:about="#datavz">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#qlkv30"/>
+  <has_competence rdf:resource="#dthr31"/>
+  <has_competence rdf:resource="#brst32"/>
+  <has_competence rdf:resource="#domo33"/>
+  <has_competence rdf:resource="#eis533"/>
+  <has_competence rdf:resource="#bsc534"/>
+  <has_competence rdf:resource="#tbsftwr551"/>
+  <has_competence rdf:resource="#jspr552"/>
+  <has_competence rdf:resource="#qlksns553"/>
+  <has_competence rdf:resource="#mrprt554"/>
+  <has_competence rdf:resource="#rprtone555"/>
+  <has_competence rdf:resource="#sptfr567"/>
+  <has_competence rdf:resource="#prscp570"/>
+  <has_competence rdf:resource="#nprintn571"/>
+  <has_competence rdf:resource="#hprn572"/>
+  <has_competence rdf:resource="#crstlrpt573"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data visualization</nomD>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reporting</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">business analytics</has_synonyme>
+</Domain>
+
+<Domain rdf:about="#bint">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#domo33"/>
+  <has_competence rdf:resource="#pbi69"/>
+  <has_competence rdf:resource="#ms70"/>
+  <has_competence rdf:resource="#qlik71"/>
+  <has_competence rdf:resource="#tld26"/>
+  <has_competence rdf:resource="#opnrf27"/>
+  <has_competence rdf:resource="#olp8"/>
+  <has_competence rdf:resource="#etl522"/>
+  <has_competence rdf:resource="#mcrsbi523"/>
+  <has_competence rdf:resource="#cogns524"/>
+  <has_competence rdf:resource="#odi525"/>
+  <has_competence rdf:resource="#infrmtc526"/>
+  <has_competence rdf:resource="#spbi527"/>
+  <has_competence rdf:resource="#spbw528"/>
+  <has_competence rdf:resource="#hn529"/>
+  <has_competence rdf:resource="#dtstg530"/>
+  <has_competence rdf:resource="#ntzz531"/>
+  <has_competence rdf:resource="#mdx532"/>
+  <has_competence rdf:resource="#bo536"/>
+  <has_competence rdf:resource="#bds537"/>
+  <has_competence rdf:resource="#msb540"/>
+  <has_competence rdf:resource="#sss541"/>
+  <has_competence rdf:resource="#ssis542"/>
+  <has_competence rdf:resource="#ssrs543"/>
+  <has_competence rdf:resource="#mcrst544"/>
+  <has_competence rdf:resource="#bo545"/>
+  <has_competence rdf:resource="#sns547"/>
+  <has_competence rdf:resource="#tm1548"/>
+  <has_competence rdf:resource="#tgtk549"/>
+  <has_competence rdf:resource="#550"/>
+  <has_competence rdf:resource="#genio558"/>
+  <has_competence rdf:resource="#azr559"/>
+  <has_competence rdf:resource="#lmr560"/>
+  <has_competence rdf:resource="#wb561"/>
+  <has_competence rdf:resource="#spnlss562"/>
+  <has_competence rdf:resource="#tsql568"/>
+  <has_competence rdf:resource="#dx574"/>
+  <has_competence rdf:resource="#vrtc575"/>
+  <has_competence rdf:resource="#tbc576"/>
+  <has_competence rdf:resource="#pwrpvt577"/>
+  <has_competence rdf:resource="#latrx578"/>
+  <has_competence rdf:resource="#ob581"/>
+  <has_competence rdf:resource="#cmc582"/>
+  <has_competence rdf:resource="#ecc583"/>
+  <has_competence rdf:resource="#grv585"/>
+  <has_competence rdf:resource="#dx588"/>
+  <has_competence rdf:resource="#dl589"/>
+  <has_competence rdf:resource="#akka601"/>
+  <has_competence rdf:resource="#pnth627"/>
+  <has_competence rdf:resource="#ws2628"/>
+  <has_competence rdf:resource="#jsprsft629"/>
+  <has_competence rdf:resource="#jdx630"/>
+  <has_competence rdf:resource="#spg631"/>
+  <include rdf:resource="#datavz"/>
+  <include rdf:resource="#andnn"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">business intelligence</nomD>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bi</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">projet decisionnel</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">entrepot données</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">datawarehouse</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data warehouse</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dwh</has_synonyme>
+</Domain>
+
+<Domain rdf:about="#andnn">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#r34"/>
+  <has_competence rdf:resource="#sas35"/>
+  <has_competence rdf:resource="#pyplot36"/>
+  <has_competence rdf:resource="#sciktl37"/>
+  <has_competence rdf:resource="#numpy38"/>
+  <has_competence rdf:resource="#scipy39"/>
+  <has_competence rdf:resource="#pandas40"/>
+  <has_competence rdf:resource="#stmdl41"/>
+  <has_competence rdf:resource="#mtlib42"/>
+  <has_competence rdf:resource="#sborn43"/>
+  <has_competence rdf:resource="#pltly44"/>
+  <has_competence rdf:resource="#brokh45"/>
+  <has_competence rdf:resource="#pdt72"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">analyse données</nomD>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data analysis</has_synonyme>
+</Domain>
+
+<Domain rdf:about="#nlp">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#nltk58"/>
+  <has_competence rdf:resource="#gensim59"/>
+  <has_competence rdf:resource="#spacy60"/>
+  <has_competence rdf:resource="#s2s61"/>
+  <has_competence rdf:resource="#w2v62"/>
+  <has_competence rdf:resource="#d2v63"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nlp</nomD>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">natural language processing</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">langage naturel</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taln</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text mining</has_synonyme>
+</Domain>
+
+<Domain rdf:about="#bd">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#hdp1"/>
+  <has_competence rdf:resource="#hve2"/>
+  <has_competence rdf:resource="#dt5"/>
+  <has_competence rdf:resource="#hdfs6"/>
+  <has_competence rdf:resource="#mapred7"/>
+  <has_competence rdf:resource="#jv9"/>
+  <has_competence rdf:resource="#pyth10"/>
+  <has_competence rdf:resource="#scl11"/>
+  <has_competence rdf:resource="#prl2"/>
+  <has_competence rdf:resource="#sprk13"/>
+  <has_competence rdf:resource="#str14"/>
+  <has_competence rdf:resource="#pig15"/>
+  <has_competence rdf:resource="#cldr19"/>
+  <has_competence rdf:resource="#cchn20"/>
+  <has_competence rdf:resource="#flm21"/>
+  <has_competence rdf:resource="#rch22"/>
+  <has_competence rdf:resource="#zkpr23"/>
+  <has_competence rdf:resource="#slr24"/>
+  <has_competence rdf:resource="#kfk25"/>
+  <has_competence rdf:resource="#rpdmn28"/>
+  <has_competence rdf:resource="#nifi29"/>
+  <has_competence rdf:resource="#dtlk424"/>
+  <has_competence rdf:resource="#hvql425"/>
+  <has_competence rdf:resource="#sqp426"/>
+  <has_competence rdf:resource="#blne427"/>
+  <has_competence rdf:resource="#impl428"/>
+  <has_competence rdf:resource="#pysprk429"/>
+  <has_competence rdf:resource="#hvcntxt431"/>
+  <has_competence rdf:resource="#ntwrk593"/>
+  <has_competence rdf:resource="#oozie594"/>
+  <has_competence rdf:resource="#wk595"/>
+  <has_competence rdf:resource="#h596"/>
+  <has_competence rdf:resource="#lgstch597"/>
+  <has_competence rdf:resource="#kbn598"/>
+  <has_competence rdf:resource="#grfn599"/>
+  <has_competence rdf:resource="#chbs600"/>
+  <has_competence rdf:resource="#akka601"/>
+  <has_competence rdf:resource="#msm602"/>
+  <has_competence rdf:resource="#rckdb603"/>
+  <has_competence rdf:resource="#nsbl604"/>
+  <has_competence rdf:resource="#ambr605"/>
+  <has_competence rdf:resource="#rngr606"/>
+  <has_competence rdf:resource="#mpr607"/>
+  <has_competence rdf:resource="#avr608"/>
+  <has_competence rdf:resource="#prqut609"/>
+  <has_competence rdf:resource="#orc610"/>
+  <has_competence rdf:resource="#hdp611"/>
+  <has_competence rdf:resource="#hdf612"/>
+  <has_competence rdf:resource="#knx613"/>
+  <has_competence rdf:resource="#flnk614"/>
+  <has_competence rdf:resource="#ym615"/>
+  <include rdf:resource="#scrpg"/>
+  <include rdf:resource="#mlearng"/>
+  <include rdf:resource="#andnn"/>
+  <include rdf:resource="#datavz"/>
+  <include rdf:resource="#nlp"/>
+  <include rdf:resource="#bint"/>
+  <include rdf:resource="#nsql"/>
+  <include rdf:resource="#bdt"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">big data</nomD>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data analytics</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">datascience</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data science</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">big analytics</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">science donnée</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">grande base donnée</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">base donnée massive</has_synonyme>
+</Domain>
+
+<Domain rdf:about="#frnt">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#html73"/>
+  <has_competence rdf:resource="#css74"/>
+  <has_competence rdf:resource="#jvscrpt75"/>
+  <has_competence rdf:resource="#jqur76"/>
+  <has_competence rdf:resource="#bstr77"/>
+  <has_competence rdf:resource="#angl78"/>
+  <has_competence rdf:resource="#sss79"/>
+  <has_competence rdf:resource="#ajax80"/>
+  <has_competence rdf:resource="#less81"/>
+  <has_competence rdf:resource="#stls82"/>
+  <has_competence rdf:resource="#git83"/>
+  <has_competence rdf:resource="#mocha84"/>
+  <has_competence rdf:resource="#jsmn85"/>
+  <has_competence rdf:resource="#grnt86"/>
+  <has_competence rdf:resource="#glp87"/>
+  <has_competence rdf:resource="#ang88"/>
+  <has_competence rdf:resource="#anglfr89"/>
+  <has_competence rdf:resource="#angcli90"/>
+  <has_competence rdf:resource="#atm91"/>
+  <has_competence rdf:resource="#aurl92"/>
+  <has_competence rdf:resource="#bybln93"/>
+  <has_competence rdf:resource="#bckbn94"/>
+  <has_competence rdf:resource="#bem96"/>
+  <has_competence rdf:resource="#blz97"/>
+  <has_competence rdf:resource="#bourbon98"/>
+  <has_competence rdf:resource="#bwr99"/>
+  <has_competence rdf:resource="#brckts100"/>
+  <has_competence rdf:resource="#brcll101"/>
+  <has_competence rdf:resource="#brwsfr102"/>
+  <has_competence rdf:resource="#brnch103"/>
+  <has_competence rdf:resource="#cnvs104"/>
+  <has_competence rdf:resource="#chrt105"/>
+  <has_competence rdf:resource="#cljr106"/>
+  <has_competence rdf:resource="#cmps107"/>
+  <has_competence rdf:resource="#crjs108"/>
+  <has_competence rdf:resource="#d3js109"/>
+  <has_competence rdf:resource="#dhtml10"/>
+  <has_competence rdf:resource="#dojo111"/>
+  <has_competence rdf:resource="#dom112"/>
+  <has_competence rdf:resource="#dstjs113"/>
+  <has_competence rdf:resource="#ecm114"/>
+  <has_competence rdf:resource="#elctrn115"/>
+  <has_competence rdf:resource="#embjs116"/>
+  <has_competence rdf:resource="#esl117"/>
+  <has_competence rdf:resource="#extjs118"/>
+  <has_competence rdf:resource="#flxbx119"/>
+  <has_competence rdf:resource="#gsap120"/>
+  <has_competence rdf:resource="#haml121"/>
+  <has_competence rdf:resource="#hndlbrs122"/>
+  <has_competence rdf:resource="#htmlp123"/>
+  <has_competence rdf:resource="#immtbl124"/>
+  <has_competence rdf:resource="#infrjtcs125"/>
+  <has_competence rdf:resource="#react126"/>
+  <has_competence rdf:resource="#knkout127"/>
+  <has_competence rdf:resource="#mrcry128"/>
+  <has_competence rdf:resource="#snch129"/>
+  <has_competence rdf:resource="#wbrx130"/>
+  <has_competence rdf:resource="#vejs131"/>
+  <has_competence rdf:resource="#jfce132"/>
+  <has_competence rdf:resource="#jqry133"/>
+  <has_competence rdf:resource="#jsx134"/>
+  <has_competence rdf:resource="#kend135"/>
+  <has_competence rdf:resource="#lflt136"/>
+  <has_competence rdf:resource="#mrnt137"/>
+  <has_competence rdf:resource="#mnsry138"/>
+  <has_competence rdf:resource="#mercry139"/>
+  <has_competence rdf:resource="#mbx140"/>
+  <has_competence rdf:resource="#mdrnz141"/>
+  <has_competence rdf:resource="#mstch142"/>
+  <has_competence rdf:resource="#njks143"/>
+  <has_competence rdf:resource="#nvd144"/>
+  <has_competence rdf:resource="#ocss145"/>
+  <has_competence rdf:resource="#prp146"/>
+  <has_competence rdf:resource="#pxsjs147"/>
+  <has_competence rdf:resource="#plmr148"/>
+  <has_competence rdf:resource="#pstcss149"/>
+  <has_competence rdf:resource="#primng150"/>
+  <has_competence rdf:resource="#rdx151"/>
+  <has_competence rdf:resource="#rly152"/>
+  <has_competence rdf:resource="#rqujs153"/>
+  <has_competence rdf:resource="#rxjs154"/>
+  <has_competence rdf:resource="#sml155"/>
+  <has_competence rdf:resource="#skltn156"/>
+  <has_competence rdf:resource="#scktio157"/>
+  <has_competence rdf:resource="#spnjs158"/>
+  <has_competence rdf:resource="#undrscr159"/>
+  <has_competence rdf:resource="#cprs160"/>
+  <has_competence rdf:resource="#pll161"/>
+  <has_competence rdf:resource="#tpscrpt162"/>
+  <has_competence rdf:resource="#es6192"/>
+  <has_competence rdf:resource="#rspns193"/>
+  <has_competence rdf:resource="#fndt194"/>
+  <has_competence rdf:resource="#flw195"/>
+  <has_competence rdf:resource="#mtrzcss196"/>
+  <has_competence rdf:resource="#smntcui197"/>
+  <has_competence rdf:resource="#infrn198"/>
+  <has_competence rdf:resource="#svg199"/>
+  <has_competence rdf:resource="#dvdpcss200"/>
+  <has_competence rdf:resource="#nmpscrpts201"/>
+  <has_competence rdf:resource="#yrn202"/>
+  <has_competence rdf:resource="#skw203"/>
+  <has_competence rdf:resource="#smcss204"/>
+  <has_competence rdf:resource="#stmtcss205"/>
+  <has_competence rdf:resource="#prct207"/>
+  <has_competence rdf:resource="#reactjs392"/>
+  <has_competence rdf:resource="#html5393"/>
+  <has_competence rdf:resource="#css3394"/>
+  <has_competence rdf:resource="#ym615"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">front end</nomD>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">front</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frontend</has_synonyme>
+</Domain>
+
+<Domain rdf:about="#bckend">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#php163"/>
+  <has_competence rdf:resource="#ndjs164"/>
+  <has_competence rdf:resource="#rstfy165"/>
+  <has_competence rdf:resource="#rby167"/>
+  <has_competence rdf:resource="#rls168"/>
+  <has_competence rdf:resource="#rbls169"/>
+  <has_competence rdf:resource="#sntr170"/>
+  <has_competence rdf:resource="#rda171"/>
+  <has_competence rdf:resource="#djng172"/>
+  <has_competence rdf:resource="#flsk173"/>
+  <has_competence rdf:resource="#actn174"/>
+  <has_competence rdf:resource="#cffscrpt175"/>
+  <has_competence rdf:resource="#erlng176"/>
+  <has_competence rdf:resource="#lrvl177"/>
+  <has_competence rdf:resource="#smphn178"/>
+  <has_competence rdf:resource="#znd179"/>
+  <has_competence rdf:resource="#hpjs180"/>
+  <has_competence rdf:resource="#expsjs181"/>
+  <has_competence rdf:resource="#kjs182"/>
+  <has_competence rdf:resource="#mtr183"/>
+  <has_competence rdf:resource="#mjto184"/>
+  <has_competence rdf:resource="#drb208"/>
+  <has_competence rdf:resource="#sljs209"/>
+  <has_competence rdf:resource="#ttl210"/>
+  <has_competence rdf:resource="#phnx211"/>
+  <has_competence rdf:resource="#prmd212"/>
+  <has_competence rdf:resource="#phnxelixr213"/>
+  <has_competence rdf:resource="#aur214"/>
+  <has_competence rdf:resource="#ckphp215"/>
+  <has_competence rdf:resource="#cdignter216"/>
+  <has_competence rdf:resource="#ftfr217"/>
+  <has_competence rdf:resource="#phlcn218"/>
+  <has_competence rdf:resource="#slm219"/>
+  <has_competence rdf:resource="#yii220"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">back end</nomD>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">backend</has_synonyme>
+</Domain>
+
+<Domain rdf:about="#fllstck">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <include rdf:resource="#bckend"/>
+  <include rdf:resource="#frnt"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">full stack</nomD>
+</Domain>
+
+<Domain rdf:about="#web">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#xml185"/>
+  <has_competence rdf:resource="#xhtml186"/>
+  <has_competence rdf:resource="#xsl187"/>
+  <has_competence rdf:resource="#xslt188"/>
+  <has_competence rdf:resource="#xsd189"/>
+  <has_competence rdf:resource="#xpath190"/>
+  <has_competence rdf:resource="#xquery191"/>
+  <has_competence rdf:resource="#bld281"/>
+  <has_competence rdf:resource="#wmpsrv337"/>
+  <has_competence rdf:resource="#svn420"/>
+  <has_competence rdf:resource="#tmct421"/>
+  <has_competence rdf:resource="#glsf422"/>
+  <has_competence rdf:resource="#jbss423"/>
+  <has_competence rdf:resource="#rst579"/>
+  <has_competence rdf:resource="#sop580"/>
+  <has_competence rdf:resource="#soa618"/>
+  <has_competence rdf:resource="#aws619"/>
+  <include rdf:resource="#fllstck"/>
+  <include rdf:resource="#bckend"/>
+  <include rdf:resource="#frnt"/>
+  <include rdf:resource="#cms"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">web</nomD>
+</Domain>
+
+<Domain rdf:about="#cms">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#wdprs221"/>
+  <has_competence rdf:resource="#drpl222"/>
+  <has_competence rdf:resource="#jmla223"/>
+  <has_competence rdf:resource="#expng224"/>
+  <has_competence rdf:resource="#txtptrn225"/>
+  <has_competence rdf:resource="#rdnt226"/>
+  <has_competence rdf:resource="#cshcms227"/>
+  <has_competence rdf:resource="#slvrstrp228"/>
+  <has_competence rdf:resource="#alfrsc229"/>
+  <has_competence rdf:resource="#tplght230"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cms</nomD>
+</Domain>
+
+<Domain rdf:about="#j2e">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#sprnmvc231"/>
+  <has_competence rdf:resource="#strt232"/>
+  <has_competence rdf:resource="#strt233"/>
+  <has_competence rdf:resource="#hbrnt234"/>
+  <has_competence rdf:resource="#jsf235"/>
+  <has_competence rdf:resource="#vdn236"/>
+  <has_competence rdf:resource="#grls237"/>
+  <has_competence rdf:resource="#eclps238"/>
+  <has_competence rdf:resource="#jsp239"/>
+  <has_competence rdf:resource="#srvlt240"/>
+  <has_competence rdf:resource="#ejb241"/>
+  <has_competence rdf:resource="#jdbc242"/>
+  <has_competence rdf:resource="#jndi243"/>
+  <has_competence rdf:resource="#jta244"/>
+  <has_competence rdf:resource="#jts245"/>
+  <has_competence rdf:resource="#jca246"/>
+  <has_competence rdf:resource="#jmx247"/>
+  <has_competence rdf:resource="#jaas248"/>
+  <has_competence rdf:resource="#jpa249"/>
+  <has_competence rdf:resource="#jvml250"/>
+  <has_competence rdf:resource="#jms251"/>
+  <has_competence rdf:resource="#rmi-iiop252"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java ee</nomD>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">j2ee</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">j2e</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">j ee</has_synonyme>
+</Domain>
+
+<Domain rdf:about="#jme">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#lwt253"/>
+  <has_competence rdf:resource="#twk254"/>
+  <has_competence rdf:resource="#rchmeng255"/>
+  <has_competence rdf:resource="#px256"/>
+  <has_competence rdf:resource="#lush257"/>
+  <has_competence rdf:resource="#jns258"/>
+  <has_competence rdf:resource="#tch259"/>
+  <has_competence rdf:resource="#trnk260"/>
+  <has_competence rdf:resource="#mrjr261"/>
+  <has_competence rdf:resource="#tnln262"/>
+  <has_competence rdf:resource="#bsmv263"/>
+  <has_competence rdf:resource="#kuix264"/>
+  <has_competence rdf:resource="#kui265"/>
+  <has_competence rdf:resource="#flml266"/>
+  <has_competence rdf:resource="#apm267"/>
+  <has_competence rdf:resource="#tgsm268"/>
+  <has_competence rdf:resource="#nxtl269"/>
+  <has_competence rdf:resource="#fre270"/>
+  <has_competence rdf:resource="#lwcl271"/>
+  <has_competence rdf:resource="#j4fm272"/>
+  <has_competence rdf:resource="#jmblcr273"/>
+  <has_competence rdf:resource="#mwt274"/>
+  <has_competence rdf:resource="#swng275"/>
+  <has_competence rdf:resource="#thnlt276"/>
+  <has_competence rdf:resource="#snclst277"/>
+  <has_competence rdf:resource="#flg278"/>
+  <has_competence rdf:resource="#andstd279"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java me</nomD>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java micro edition</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java micro</has_synonyme>
+</Domain>
+
+<Domain rdf:about="#jse">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#jv9"/>
+  <has_competence rdf:resource="#jdbc242"/>
+  <has_competence rdf:resource="#jpa249"/>
+  <has_competence rdf:resource="#jmx247"/>
+  <has_competence rdf:resource="#jndi243"/>
+  <has_competence rdf:resource="#mvn280"/>
+  <has_competence rdf:resource="#jdk282"/>
+  <has_competence rdf:resource="#jmc283"/>
+  <has_competence rdf:resource="#jfr284"/>
+  <has_competence rdf:resource="#swng285"/>
+  <has_competence rdf:resource="#swingx286"/>
+  <has_competence rdf:resource="#jv2d287"/>
+  <has_competence rdf:resource="#awt288"/>
+  <has_competence rdf:resource="#jv3d289"/>
+  <has_competence rdf:resource="#jvfx290"/>
+  <has_competence rdf:resource="#rmi291"/>
+  <has_competence rdf:resource="#jvdb292"/>
+  <has_competence rdf:resource="#xmljxp293"/>
+  <has_competence rdf:resource="#jni294"/>
+  <has_competence rdf:resource="#jre295"/>
+  <has_competence rdf:resource="#crb296"/>
+  <has_competence rdf:resource="#jab297"/>
+  <has_competence rdf:resource="#jai298"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java se</nomD>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java standard edition</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java standard</has_synonyme>
+</Domain>
+
+<Domain rdf:about="#jvpltfrms">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#eclps414"/>
+  <has_competence rdf:resource="#ntbns415"/>
+  <include rdf:resource="#j2e"/>
+  <include rdf:resource="#jme"/>
+  <include rdf:resource="#jse"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java platform</nomD>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java programming platforms</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java technologies</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">technologies java</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java programming language platforms</has_synonyme>
+</Domain>
+
+<Domain rdf:about="#crm">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#slcfrc299"/>
+  <has_competence rdf:resource="#sgcrm300"/>
+  <has_competence rdf:resource="#srcrm301"/>
+  <has_competence rdf:resource="#dlbr302"/>
+  <has_competence rdf:resource="#zh303"/>
+  <has_competence rdf:resource="#ntscr304"/>
+  <has_competence rdf:resource="#jded538"/>
+  <has_competence rdf:resource="#ss539"/>
+  <has_competence rdf:resource="#mcrftnav556"/>
+  <has_competence rdf:resource="#mcrftax557"/>
+  <has_competence rdf:resource="#esb621"/>
+  <has_competence rdf:resource="#mdm622"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crm</nomD>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">customer relationship management</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gestion relation client</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">erp</has_synonyme>
+</Domain>
+
+<Domain rdf:about="#bdt">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#sql535"/>
+  <has_competence rdf:resource="#plsql546"/>
+  <has_competence rdf:resource="#orcl319"/>
+  <has_competence rdf:resource="#orclrdbms320"/>
+  <has_competence rdf:resource="#db321"/>
+  <has_competence rdf:resource="#sqlsrv322"/>
+  <has_competence rdf:resource="#sp323"/>
+  <has_competence rdf:resource="#spsb324"/>
+  <has_competence rdf:resource="#spsybase325"/>
+  <has_competence rdf:resource="#tdt326"/>
+  <has_competence rdf:resource="#adbs327"/>
+  <has_competence rdf:resource="#msql328"/>
+  <has_competence rdf:resource="#flmkr329"/>
+  <has_competence rdf:resource="#mcacc330"/>
+  <has_competence rdf:resource="#infmx331"/>
+  <has_competence rdf:resource="#sqlt332"/>
+  <has_competence rdf:resource="#pstgr333"/>
+  <has_competence rdf:resource="#amzrds334"/>
+  <has_competence rdf:resource="#sqlpr335"/>
+  <has_competence rdf:resource="#phpmdmn336"/>
+  <has_competence rdf:resource="#td563"/>
+  <has_competence rdf:resource="#sqlsrv564"/>
+  <has_competence rdf:resource="#sqldev569"/>
+  <has_competence rdf:resource="#rdshft584"/>
+  <has_competence rdf:resource="#oltp625"/>
+  <has_competence rdf:resource="#dmp626"/>
+  <include rdf:resource="#nsql"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">base donnée</nomD>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data base</has_synonyme>
+</Domain>
+
+<Domain rdf:about="#nsql">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#cssd3"/>
+  <has_competence rdf:resource="#mngo17"/>
+  <has_competence rdf:resource="#hbs16"/>
+  <has_competence rdf:resource="#reds18"/>
+  <has_competence rdf:resource="#cdb305"/>
+  <has_competence rdf:resource="#rvndb306"/>
+  <has_competence rdf:resource="#mmcdb307"/>
+  <has_competence rdf:resource="#rk308"/>
+  <has_competence rdf:resource="#n4j309"/>
+  <has_competence rdf:resource="#prst310"/>
+  <has_competence rdf:resource="#hprgrph311"/>
+  <has_competence rdf:resource="#vldmrt312"/>
+  <has_competence rdf:resource="#trstr313"/>
+  <has_competence rdf:resource="#ndts314"/>
+  <has_competence rdf:resource="#modb315"/>
+  <has_competence rdf:resource="#orndb316"/>
+  <has_competence rdf:resource="#infgrd317"/>
+  <has_competence rdf:resource="#db4o318"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nosql</nomD>
+</Domain>
+
+<Domain rdf:about="#test">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#sqsh338"/>
+  <has_competence rdf:resource="#ttts339"/>
+  <has_competence rdf:resource="#qtp340"/>
+  <has_competence rdf:resource="#ks341"/>
+  <has_competence rdf:resource="#wsft342"/>
+  <has_competence rdf:resource="#rnrx343"/>
+  <has_competence rdf:resource="#prsft344"/>
+  <has_competence rdf:resource="#smrtb345"/>
+  <has_competence rdf:resource="#sop347"/>
+  <has_competence rdf:resource="#wbinj348"/>
+  <has_competence rdf:resource="#sqsh349"/>
+  <has_competence rdf:resource="#wtr350"/>
+  <has_competence rdf:resource="#tstm351"/>
+  <has_competence rdf:resource="#appltls352"/>
+  <has_competence rdf:resource="#tlrk353"/>
+  <has_competence rdf:resource="#tstcmp354"/>
+  <has_competence rdf:resource="#spsnr375"/>
+  <has_competence rdf:resource="#jr376"/>
+  <has_competence rdf:resource="#mntsh377"/>
+  <has_competence rdf:resource="#fgbz378"/>
+  <has_competence rdf:resource="#bgzll379"/>
+  <has_competence rdf:resource="#bgnt380"/>
+  <has_competence rdf:resource="#rdmn382"/>
+  <has_competence rdf:resource="#qtest383"/>
+  <has_competence rdf:resource="#tstpd384"/>
+  <has_competence rdf:resource="#prct385"/>
+  <has_competence rdf:resource="#zphr386"/>
+  <has_competence rdf:resource="#qmtr387"/>
+  <has_competence rdf:resource="#tstrl388"/>
+  <has_competence rdf:resource="#qac390"/>
+  <has_competence rdf:resource="#jnt418"/>
+  <has_competence rdf:resource="#tstng419"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">test applicatif</nomD>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chaine test</has_synonyme>
+  <has_synonyme rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testing</has_synonyme>
+</Domain>
+
+<Domain rdf:about="#mblest">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#app358"/>
+  <has_competence rdf:resource="#espr359"/>
+  <has_competence rdf:resource="#prft360"/>
+  <has_competence rdf:resource="#exprt361"/>
+  <has_competence rdf:resource="#rbtm362"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mobile testing</nomD>
+</Domain>
+
+<Domain rdf:about="#loadtst">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#wbld355"/>
+  <has_competence rdf:resource="#ldrunr356"/>
+  <has_competence rdf:resource="#wpt357"/>
+  <has_competence rdf:resource="#ldpr363"/>
+  <has_competence rdf:resource="#slkprf364"/>
+  <has_competence rdf:resource="#jmtr346"/>
+  <has_competence rdf:resource="#agld365"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">load testing</nomD>
+</Domain>
+
+<Domain rdf:about="#wbtest">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#brs366"/>
+  <has_competence rdf:resource="#crss367"/>
+  <has_competence rdf:resource="#sclbs368"/>
+  <has_competence rdf:resource="#gstlb369"/>
+  <has_competence rdf:resource="#brws370"/>
+  <has_competence rdf:resource="#ntsprk371"/>
+  <has_competence rdf:resource="#owsp372"/>
+  <has_competence rdf:resource="#antx373"/>
+  <has_competence rdf:resource="#wcs374"/>
+  <has_competence rdf:resource="#selnm65"/>
+  <has_competence rdf:resource="#bggn381"/>
+  <has_competence rdf:resource="#tclb389"/>
+  <has_competence rdf:resource="#tlnk391"/>
+  <has_competence rdf:resource="#jsmn416"/>
+  <has_competence rdf:resource="#krm417"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">web testing</nomD>
+</Domain>
+
+<Domain rdf:about="#dnot">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#dtnet395"/>
+  <has_competence rdf:resource="#dtntstd396"/>
+  <has_competence rdf:resource="#aspdotnet397"/>
+  <has_competence rdf:resource="#dtntfr398"/>
+  <has_competence rdf:resource="#mn399"/>
+  <has_competence rdf:resource="#xmrn400"/>
+  <has_competence rdf:resource="#uwp401"/>
+  <has_competence rdf:resource="#cshrp402"/>
+  <has_competence rdf:resource="#vbnt403"/>
+  <has_competence rdf:resource="#clr404"/>
+  <has_competence rdf:resource="#clrc405"/>
+  <has_competence rdf:resource="#vstd406"/>
+  <has_competence rdf:resource="#ck407"/>
+  <has_competence rdf:resource="#fk408"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dotnet platforme</nomD>
+</Domain>
+
+<Domain rdf:about="#gstprj">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#scrm413"/>
+  <has_competence rdf:resource="#dlbr302"/>
+  <has_competence rdf:resource="#trll433"/>
+  <has_competence rdf:resource="#btrx434"/>
+  <has_competence rdf:resource="#cnfls435"/>
+  <has_competence rdf:resource="#slck436"/>
+  <has_competence rdf:resource="#atms437"/>
+  <has_competence rdf:resource="#aznd438"/>
+  <has_competence rdf:resource="#bscmp439"/>
+  <has_competence rdf:resource="#clrzn440"/>
+  <has_competence rdf:resource="#clbtv441"/>
+  <has_competence rdf:resource="#egrwp442"/>
+  <has_competence rdf:resource="#extonln443"/>
+  <has_competence rdf:resource="#expltfr444"/>
+  <has_competence rdf:resource="#eylbrd445"/>
+  <has_competence rdf:resource="#gntprj446"/>
+  <has_competence rdf:resource="#gnsprj447"/>
+  <has_competence rdf:resource="#gt448"/>
+  <has_competence rdf:resource="#kiwli449"/>
+  <has_competence rdf:resource="#kplt450"/>
+  <has_competence rdf:resource="#lnchpd451"/>
+  <has_competence rdf:resource="#mnts452"/>
+  <has_competence rdf:resource="#mprj453"/>
+  <has_competence rdf:resource="#mywrk454"/>
+  <has_competence rdf:resource="#ospc455"/>
+  <has_competence rdf:resource="#onloffc456"/>
+  <has_competence rdf:resource="#opnwork457"/>
+  <has_competence rdf:resource="#opnrj458"/>
+  <has_competence rdf:resource="#phpgrpware459"/>
+  <has_competence rdf:resource="#ppp460"/>
+  <has_competence rdf:resource="#prjld461"/>
+  <has_competence rdf:resource="#scfrm462"/>
+  <has_competence rdf:resource="#tskjugglr463"/>
+  <has_competence rdf:resource="#trc464"/>
+  <has_competence rdf:resource="#tlp465"/>
+  <has_competence rdf:resource="#wm466"/>
+  <has_competence rdf:resource="#wt467"/>
+  <has_competence rdf:resource="#wrkentr468"/>
+  <has_competence rdf:resource="#wrk469"/>
+  <has_competence rdf:resource="#splnn470"/>
+  <has_competence rdf:resource="#vslpln471"/>
+  <has_competence rdf:resource="#vslp472"/>
+  <has_competence rdf:resource="#prnc565"/>
+  <has_competence rdf:resource="#pmi566"/>
+  <has_competence rdf:resource="#agl620"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gestion projet</nomD>
+</Domain>
+
+<Domain rdf:about="#os">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#wndws473"/>
+  <has_competence rdf:resource="#unx474"/>
+  <has_competence rdf:resource="#lnx475"/>
+  <has_competence rdf:resource="#mcos476"/>
+  <has_competence rdf:resource="#ios477"/>
+  <has_competence rdf:resource="#gnulnx478"/>
+  <has_competence rdf:resource="#dbn479"/>
+  <has_competence rdf:resource="#gnt480"/>
+  <has_competence rdf:resource="#rdht481"/>
+  <has_competence rdf:resource="#sse482"/>
+  <has_competence rdf:resource="#slckwr483"/>
+  <has_competence rdf:resource="#bsd484"/>
+  <has_competence rdf:resource="#ntbs485"/>
+  <has_competence rdf:resource="#pnbsd486"/>
+  <has_competence rdf:resource="#frbsd487"/>
+  <has_competence rdf:resource="#pcbsd488"/>
+  <has_competence rdf:resource="#drgnfly489"/>
+  <has_competence rdf:resource="#drwn490"/>
+  <has_competence rdf:resource="#aix491"/>
+  <has_competence rdf:resource="#opnslrs492"/>
+  <has_competence rdf:resource="#slrs493"/>
+  <has_competence rdf:resource="#aux494"/>
+  <has_competence rdf:resource="#bll495"/>
+  <has_competence rdf:resource="#bos496"/>
+  <has_competence rdf:resource="#irx497"/>
+  <has_competence rdf:resource="#hpux498"/>
+  <has_competence rdf:resource="#lynx499"/>
+  <has_competence rdf:resource="#nxtp500"/>
+  <has_competence rdf:resource="#snx501"/>
+  <has_competence rdf:resource="#sun502"/>
+  <has_competence rdf:resource="#tru503"/>
+  <has_competence rdf:resource="#os2504"/>
+  <has_competence rdf:resource="#os505"/>
+  <has_competence rdf:resource="#vms506"/>
+  <has_competence rdf:resource="#opnvms507"/>
+  <has_competence rdf:resource="#multcs508"/>
+  <has_competence rdf:resource="#ctss509"/>
+  <has_competence rdf:resource="#gcos510"/>
+  <has_competence rdf:resource="#bs511"/>
+  <has_competence rdf:resource="#ppnos512"/>
+  <has_competence rdf:resource="#alnx513"/>
+  <has_competence rdf:resource="#cnt514"/>
+  <has_competence rdf:resource="#kl515"/>
+  <has_competence rdf:resource="#fdr516"/>
+  <has_competence rdf:resource="#ubnt517"/>
+  <has_competence rdf:resource="#sh518"/>
+  <has_competence rdf:resource="#btch519"/>
+  <has_competence rdf:resource="#rspbn520"/>
+  <has_competence rdf:resource="#mgia521"/>
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">système exploitation</nomD>
+</Domain>
+
+<Domain rdf:about="#dvps">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <has_competence rdf:resource="#kbrntrs586"/>
+  <has_competence rdf:resource="#dckr587"/>
+  <has_competence rdf:resource="#jnks411"/>
+  <has_competence rdf:resource="#ps623"/>
+  <has_competence rdf:resource="#is624"/>
+  <has_competence rdf:resource="#jhpstr632"/>
+  <has_competence rdf:resource="#git83"/>
+  
+  <nomD rdf:datatype="http://www.w3.org/2001/XMLSchema#string">devops</nomD>
+</Domain>
+
+
+</rdf:RDF>
